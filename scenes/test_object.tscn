@@ -1,9 +1,14 @@
 [gd_scene format=3 uid="uid://dbf71h87ka804"]
 
+[ext_resource type="Script" uid="uid://d384mqu1xxai1" path="res://scenes/test_object.gd" id="1_1qfhr"]
 [ext_resource type="Texture2D" uid="uid://dms72d110b4bw" path="res://assets/images/icon.svg" id="1_eyrmi"]
 
 [node name="TestObject" type="Node2D" unique_id=443474633]
-position = Vector2(1, 0)
+script = ExtResource("1_1qfhr")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1114459930]
 texture = ExtResource("1_eyrmi")
+
+[node name="DeathTimer" type="Timer" parent="." unique_id=1998815990]
+wait_time = 3.0
+autostart = true
