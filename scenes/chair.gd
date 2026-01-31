@@ -3,6 +3,7 @@ class_name Chair
 
 var originalxposition : float 
 @onready var splat = $Splatter
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	originalxposition = position.x
@@ -12,6 +13,7 @@ func _ready() -> void:
 	GameState.mutant_hit.connect(_on_mutant_hit_do_splat)
 	
 func _on_mutant_hit_do_splat ():
+	print("splat")
 	splat.visible = true
 	
 	

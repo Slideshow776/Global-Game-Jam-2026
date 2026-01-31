@@ -1,12 +1,13 @@
 extends Node
 signal gun_clicked
 signal mutant_hit
+signal brain_hit
 signal mutant_spawn
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	gun_clicked.connect(gun_play_sound)
-	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
+	#Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
 
 func helloWorld():
 	print_debug("hello world")
@@ -16,4 +17,5 @@ func _process(delta: float) -> void:
 	pass
 
 func gun_play_sound():
-	print_debug("Pang :-")
+	#print_debug("Pang :-")
+	pass
