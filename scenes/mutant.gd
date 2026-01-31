@@ -1,5 +1,5 @@
 extends Node2D
-class_name Mutant
+class_name mockMutant
 
 var originalyposition : float 
 signal mutantHit
@@ -14,9 +14,8 @@ func _ready() -> void:
 	
 func _on_timer_timeout() -> void:
 	
-	var tween := create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_BOUNCE)
-	tween.tween_property(self, "position:y", originalyposition, 0.7)
-	
+	var tween := create_tween()
+	tween.tween_property(self, "position:y", originalyposition, 0.3)
 	
 	pass # Replace with function body.
 
