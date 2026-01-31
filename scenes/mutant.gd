@@ -37,9 +37,10 @@ func on_death():
 	var tweenY := create_tween()
 	var time = 0.3
 	tweenY.set_trans(Tween.TRANS_BOUNCE)
+	tweenY.set_ease(Tween.EASE_OUT)
 	tweenY.tween_property(self, "position:y", position.y - 300, time*1.5)
 	await tweenY.finished
-	var tweenXY := create_tween()
+	var tweenXY := create_tween().set_ease(Tween.EASE_OUT)
 	var tweenRot := create_tween()
 	tweenRot.tween_property(self, "rotation_degrees", 360.0, time).as_relative()
 	tweenXY.tween_property(self, "position", Vector2(position.x + 1000, position.y - 300), time)
