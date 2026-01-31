@@ -9,11 +9,7 @@ func _ready() -> void:
 	# originalyposition = position.y
 	position.y = -1000 
 	timer.timeout.connect(_on_timer_timeout)
-	pass
 	
 func _on_timer_timeout() -> void:
-	print_debug("hello")
 	var tween := create_tween()
 	tween.tween_property(self, "position:y", originalyposition, 0.2)
-	
-	pass # Replace with function body.
