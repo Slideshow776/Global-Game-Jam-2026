@@ -7,16 +7,11 @@
 [node name="Game" type="Node2D" unique_id=1847825036]
 
 [node name="Chair" parent="." unique_id=1717929055 instance=ExtResource("1_lnu2h")]
-position = Vector2(289.59375, 500.99997)
+position = Vector2(-34.000004, -212)
 scale = Vector2(1.3324018, 1.2555372)
 
 [node name="Mutant" parent="." unique_id=1784549054 instance=ExtResource("2_lbhrr")]
-position = Vector2(263.43634, 515.38794)
-
-[node name="Timer" type="Timer" parent="Mutant" unique_id=1027224886]
-wait_time = 3.0
-one_shot = true
-autostart = true
+position = Vector2(286, 481)
 
 [node name="GUI" type="CanvasLayer" parent="." unique_id=1506688441]
 
