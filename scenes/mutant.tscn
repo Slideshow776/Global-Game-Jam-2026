@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://ctl4sbj7wc1x4"]
+
+[ext_resource type="Texture2D" uid="uid://brl4h2mjrqxry" path="res://assets/images/mutant.png" id="1_smdei"]
+[ext_resource type="Script" uid="uid://bljmgiu6snykd" path="res://scenes/mutant.gd" id="2_3umk4"]
+
+[node name="Mutant" type="Sprite2D" unique_id=1784549054]
+scale = Vector2(1.1361847, 1.195725)
+texture = ExtResource("1_smdei")
+script = ExtResource("2_3umk4")
