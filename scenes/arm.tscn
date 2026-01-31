@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://dlmao0kysnkd"]
+
+[ext_resource type="Script" uid="uid://ccbahu0jwxr27" path="res://scenes/gun.gd" id="2_dy6di"]
+[ext_resource type="Texture2D" uid="uid://bccq7gss6wl6p" path="res://assets/images/arm.png" id="2_muf2m"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_muf2m"]
+radius = 19.026299
+
+[node name="Player" type="Node2D" unique_id=30301401]
+script = ExtResource("2_dy6di")
+
+[node name="gun" type="StaticBody2D" parent="." unique_id=1545287840]
+position = Vector2(-7, -100)
+
+[node name="gunpoint" type="CollisionShape2D" parent="gun" unique_id=770464134]
+shape = SubResource("CircleShape2D_muf2m")
+
+[node name="arm_sprite" type="Sprite2D" parent="gun" unique_id=2023479808]
+position = Vector2(7, 100)
+scale = Vector2(0.8281853, 0.75549453)
+texture = ExtResource("2_muf2m")

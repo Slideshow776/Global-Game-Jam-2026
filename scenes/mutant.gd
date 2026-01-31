@@ -28,5 +28,5 @@ func _on_timer_timeout() -> void:
 func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton && event.button_index == MOUSE_BUTTON_LEFT && event.pressed:
 		print("event click")
-		arja.mutant_hit.emit()
+		#arja.mutant_hit.emit()
 		

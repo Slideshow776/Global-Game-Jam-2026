@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://bpojwgys8yej8"]
+
+[ext_resource type="PackedScene" uid="uid://cttrm7okfclgv" path="res://scenes/chair.tscn" id="1_kynvg"]
+[ext_resource type="PackedScene" uid="uid://dgixbhnid1qao" path="res://testScenes/mutantMock.tscn" id="2_5cr4q"]
+[ext_resource type="PackedScene" uid="uid://dlmao0kysnkd" path="res://scenes/arm.tscn" id="3_jp75n"]
+[ext_resource type="Script" uid="uid://bo72ri2cuvctk" path="res://testScenes/mutantMock.gd" id="4_5cr4q"]
+
+[node name="TestScene" type="Node2D" unique_id=387761760]
+
+[node name="Chair" parent="." unique_id=1717929055 instance=ExtResource("1_kynvg")]
+position = Vector2(421.00003, 242)
+
+[node name="Player" parent="." unique_id=30301401 instance=ExtResource("3_jp75n")]
+
+[node name="MockMutant" parent="." unique_id=1784549054 instance=ExtResource("2_5cr4q")]
+script = ExtResource("4_5cr4q")
