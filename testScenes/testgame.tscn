@@ -1,16 +1,16 @@
-[gd_scene format=3 uid="uid://h6mcf7fsqf5r"]
+[gd_scene format=3 uid="uid://x2fdi14lbvxb"]
 
-[ext_resource type="PackedScene" uid="uid://cttrm7okfclgv" path="res://scenes/chair.tscn" id="1_lnu2h"]
-[ext_resource type="PackedScene" uid="uid://ctl4sbj7wc1x4" path="res://scenes/mutant.tscn" id="2_lbhrr"]
-[ext_resource type="PackedScene" uid="uid://dlmao0kysnkd" path="res://scenes/arm.tscn" id="4_lbhrr"]
+[ext_resource type="PackedScene" uid="uid://cttrm7okfclgv" path="res://scenes/chair.tscn" id="1_7xly5"]
+[ext_resource type="PackedScene" uid="uid://ctl4sbj7wc1x4" path="res://scenes/mutant.tscn" id="2_x6ekn"]
+[ext_resource type="PackedScene" uid="uid://dlmao0kysnkd" path="res://scenes/arm.tscn" id="3_4okq7"]
 
 [node name="Game" type="Node2D" unique_id=1847825036]
 
-[node name="Chair" parent="." unique_id=1717929055 instance=ExtResource("1_lnu2h")]
+[node name="Chair" parent="." unique_id=1717929055 instance=ExtResource("1_7xly5")]
 position = Vector2(289.59375, 500.99997)
 scale = Vector2(1.3324018, 1.2555372)
 
-[node name="Mutant" parent="." unique_id=1784549054 instance=ExtResource("2_lbhrr")]
+[node name="Mutant" parent="." unique_id=1784549054 instance=ExtResource("2_x6ekn")]
 position = Vector2(263.43634, 515.38794)
 
 [node name="Timer" type="Timer" parent="Mutant" unique_id=1027224886]
@@ -34,4 +34,4 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "epplekake"
 
-[node name="Player" parent="." unique_id=30301401 instance=ExtResource("4_lbhrr")]
+[node name="Player" parent="." unique_id=30301401 instance=ExtResource("3_4okq7")]
