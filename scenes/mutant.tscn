@@ -3,7 +3,19 @@
 [ext_resource type="Texture2D" uid="uid://brl4h2mjrqxry" path="res://assets/images/mutant.png" id="1_smdei"]
 [ext_resource type="Script" uid="uid://bljmgiu6snykd" path="res://scenes/mutant.gd" id="2_3umk4"]
 
-[node name="Mutant" type="Sprite2D" unique_id=1784549054]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_smdei"]
+radius = 149.69998
+height = 299.39996
+
+[node name="Mutant" type="Node2D" unique_id=1688642159]
 scale = Vector2(1.1361847, 1.195725)
-texture = ExtResource("1_smdei")
 script = ExtResource("2_3umk4")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1095359253]
+texture = ExtResource("1_smdei")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1558379320]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=435611697]
+position = Vector2(-6.16097, -180.64355)
+shape = SubResource("CapsuleShape2D_smdei")

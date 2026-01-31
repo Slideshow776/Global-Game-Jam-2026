@@ -2,8 +2,19 @@
 
 [ext_resource type="Texture2D" uid="uid://c2c24guqhnf7p" path="res://assets/images/chair.png" id="1_i2o7u"]
 [ext_resource type="Script" uid="uid://c0mf8ffqe45ig" path="res://scenes/chair.gd" id="2_3fp06"]
+[ext_resource type="Script" uid="uid://osnsvmqnosex" path="res://scenes/splatter.gd" id="3_dhd05"]
+[ext_resource type="Texture2D" uid="uid://dl176gml81wg0" path="res://assets/images/dirt_01.png" id="3_hxd06"]
 
-[node name="Chair" type="Sprite2D" unique_id=1717929055]
+[node name="Chair" type="Node2D" unique_id=34571390]
 scale = Vector2(1.4733902, 1.3883922)
-texture = ExtResource("1_i2o7u")
 script = ExtResource("2_3fp06")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=303463876]
+texture = ExtResource("1_i2o7u")
+
+[node name="Splatter" type="Node2D" parent="." unique_id=27414735]
+visible = false
+script = ExtResource("3_dhd05")
+
+[node name="Sprite2D" type="Sprite2D" parent="Splatter" unique_id=1565740413]
+texture = ExtResource("3_hxd06")

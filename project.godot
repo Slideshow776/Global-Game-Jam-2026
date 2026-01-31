@@ -19,6 +19,10 @@ config/icon="res://assets/images/icon.svg"
 
 GameState="*uid://btxenrfccxpfb"
 
+[display]
+
+window/size/viewport_height=864
+
 [dotnet]
 
 project/assembly_name="GGJ2026OSLO"
