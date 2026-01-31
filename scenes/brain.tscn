@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://dm5w4ufyhfxvx"]
+
+[ext_resource type="Script" uid="uid://d113g4er61rjs" path="res://scenes/brain.gd" id="1_5sr82"]
+[ext_resource type="Texture2D" uid="uid://h56fbjnybk6d" path="res://assets/images/brain.png" id="2_gdslr"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pqu0h"]
+radius = 50.0
+height = 100.0
+
+[node name="Brain" type="Area2D" unique_id=303962330]
+script = ExtResource("1_5sr82")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1642575917]
+position = Vector2(56, 72)
+shape = SubResource("CapsuleShape2D_pqu0h")
+
+[node name="BrainSprite" type="Sprite2D" parent="." unique_id=1522705703]
+visible = false
+position = Vector2(54, 70)
+texture = ExtResource("2_gdslr")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
