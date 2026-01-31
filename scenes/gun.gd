@@ -8,9 +8,9 @@ func _ready() -> void:
 	pass
 
 func _input(event: InputEvent) -> void:
-	if event is InputEventMouseButton:
-		if event.button_index == MOUSE_BUTTON_LEFT:
-			GameState.gun_clicked.emit()
+	if event is InputEventMouseButton && event.button_index == MOUSE_BUTTON_LEFT && event.pressed:
+		await get_tree().create_timer(0.2).timeout
+		GameState.gun_clicked.emit()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
