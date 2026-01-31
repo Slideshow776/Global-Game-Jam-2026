@@ -22,6 +22,7 @@ height = 100.0
 script = ExtResource("2_3umk4")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1413199483]
+unique_name_in_owner = true
 position = Vector2(24, -19)
 scale = Vector2(1.2084079, 1.2084079)
 texture = ExtResource("1_smdei")

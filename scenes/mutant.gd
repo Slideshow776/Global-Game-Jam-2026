@@ -5,10 +5,12 @@ var originalyposition : float
 signal mutantHit
 signal mutantDead
 
+@onready var sprite_2d: Sprite2D = %Sprite2D
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	var mutantColor: Color = Color(randf_range(0.1, 1.0), randf_range(0.1, 1.0), randf_range(0.1, 1.0), 1)
-	modulate = mutantColor
+	sprite_2d.modulate = mutantColor
 	
 	position = GameState.mutant_chair_anchor
 	originalyposition = position.y
