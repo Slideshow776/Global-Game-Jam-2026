@@ -13,7 +13,19 @@ func _ready() -> void:
 	GameState.mutant_hit.connect(_on_mutant_hit_do_splat)
 	
 func _on_mutant_hit_do_splat ():
-	print("splat")
-	splat.visible = true
+	spawn_splat(get_global_mouse_position())
 	
+	# Preload the scene to be spawned
+var splatter_scene = preload("res://scenes/splatter.tscn")
+
+func spawn_splat(location: Vector2):
+	print("splat spawn")
+	# 1. Instantiate the scene
+	var new_sprite = splatter_scene.instantiate()
+	
+	# 2. Set the position
+	new_sprite.position = location
+	
+	# 3. Add to the scene tree
+	add_child(new_sprite)
 	

@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://cptmqnmplqdcb"]
+
+[ext_resource type="Texture2D" uid="uid://ur2fte8rovsm" path="res://assets/particles/dirt_01.png" id="1_bauxg"]
+
+[node name="Splatter" type="Node2D" unique_id=1297783885]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=269910355]
+modulate = Color(1, 0.101960786, 0.12941177, 1)
+position = Vector2(10, 13)
+texture = ExtResource("1_bauxg")
