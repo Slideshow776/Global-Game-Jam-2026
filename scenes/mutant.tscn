@@ -2,8 +2,44 @@
 
 [ext_resource type="Texture2D" uid="uid://brl4h2mjrqxry" path="res://assets/images/mutant.png" id="1_smdei"]
 [ext_resource type="Script" uid="uid://bljmgiu6snykd" path="res://scenes/mutant.gd" id="2_3umk4"]
+[ext_resource type="Script" uid="uid://ctwnj4j8cml8m" path="res://scenes/bodypart.gd" id="3_3umk4"]
 
-[node name="Mutant" type="Sprite2D" unique_id=1784549054]
-scale = Vector2(1.1361847, 1.195725)
-texture = ExtResource("1_smdei")
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_smdei"]
+radius = 159.0
+height = 318.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3umk4"]
+radius = 37.0
+height = 294.0
+
+[node name="Mutant" type="Node2D" unique_id=1321833085]
 script = ExtResource("2_3umk4")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1413199483]
+position = Vector2(24, -19)
+scale = Vector2(1.2084079, 1.2084079)
+texture = ExtResource("1_smdei")
+
+[node name="Timer" type="Timer" parent="." unique_id=1504607112]
+one_shot = true
+autostart = true
+
+[node name="Head" type="Area2D" parent="." unique_id=776876882]
+script = ExtResource("3_3umk4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Head" unique_id=366012915]
+position = Vector2(12, -230)
+shape = SubResource("CapsuleShape2D_smdei")
+
+[node name="Arm" type="Area2D" parent="." unique_id=1047764396]
+script = ExtResource("3_3umk4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Arm" unique_id=1535719657]
+position = Vector2(-166, 134)
+shape = SubResource("CapsuleShape2D_3umk4")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="area_entered" from="Head" to="." method="_on_area_2d_area_entered"]
+[connection signal="input_event" from="Head" to="." method="_on_area_2d_input_event"]
+[connection signal="input_event" from="Head" to="Head" method="_on_input_event"]
+[connection signal="input_event" from="Arm" to="." method="_on_arm_input_event"]
