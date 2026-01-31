@@ -1,12 +1,19 @@
 [gd_scene format=3 uid="uid://h6mcf7fsqf5r"]
 
-[ext_resource type="Texture2D" uid="uid://dms72d110b4bw" path="res://icon.svg" id="1_uwrxv"]
+[ext_resource type="Texture2D" uid="uid://c0ktvgfl2w4h6" path="res://assets/images/mutants/proto_0.png" id="1_yqjtg"]
+[ext_resource type="Texture2D" uid="uid://ceoac0ierh8lg" path="res://assets/images/gun.PNG" id="2_lnu2h"]
 
 [node name="Game" type="Node2D" unique_id=1847825036]
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=851686825]
-position = Vector2(494, 360)
-texture = ExtResource("1_uwrxv")
+[node name="Mutant" type="Sprite2D" parent="." unique_id=851686825]
+position = Vector2(346.99997, 283.99997)
+scale = Vector2(0.9090331, 0.93052936)
+texture = ExtResource("1_yqjtg")
+
+[node name="gun" type="Sprite2D" parent="." unique_id=1738811230]
+position = Vector2(579, 550)
+scale = Vector2(0.8281853, 0.75549453)
+texture = ExtResource("2_lnu2h")
 
 [node name="GUI" type="CanvasLayer" parent="." unique_id=1506688441]
 
