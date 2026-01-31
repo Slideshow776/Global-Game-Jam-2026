@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://bs4tn8br2eprl"]
+
+[ext_resource type="Script" uid="uid://b88qlvl80mtek" path="res://audio/audio_controller.gd" id="1_5dt40"]
+[ext_resource type="AudioStream" uid="uid://2nx7u17ltjhi" path="res://audio/assets/Ambience.wav" id="2_cedxo"]
+[ext_resource type="AudioStream" uid="uid://baucn82dj47lg" path="res://audio/assets/Ambience2.wav" id="3_cedxo"]
+[ext_resource type="AudioStream" uid="uid://eao4rilrngr0" path="res://audio/assets/Ambience_Transition.wav" id="4_6fhfa"]
+[ext_resource type="AudioStream" uid="uid://cq50y2qd35vwt" path="res://audio/assets/SFX/Shoot1.wav" id="5_vj1x0"]
+
+[sub_resource type="AudioStreamInteractive" id="AudioStreamInteractive_6fhfa"]
+clip_count = 3
+clip_0/name = &"Ambience"
+clip_0/stream = ExtResource("2_cedxo")
+clip_0/auto_advance = 0
+clip_1/name = &"Ambience2"
+clip_1/stream = ExtResource("3_cedxo")
+clip_1/auto_advance = 0
+clip_2/name = &"Ambience Transition"
+clip_2/stream = ExtResource("4_6fhfa")
+clip_2/auto_advance = 0
+_transitions = {
+Vector2i(0, 1): {
+"fade_beats": 16.0,
+"fade_mode": 3,
+"filler_clip": 2,
+"from_time": 0,
+"to_time": 0,
+"use_filler_clip": true
+},
+Vector2i(0, 2): {
+"fade_beats": 16.0,
+"fade_mode": 2,
+"from_time": 0,
+"to_time": 0
+},
+Vector2i(1, 0): {
+"fade_beats": 1.0,
+"fade_mode": 3,
+"from_time": 0,
+"to_time": 0
+},
+Vector2i(2, -1): {
+"fade_beats": 16.0,
+"fade_mode": 1,
+"from_time": 0,
+"to_time": 0
+}
+}
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_12scf"]
+random_pitch = 1.0055606
+streams_count = 1
+stream_0/stream = ExtResource("5_vj1x0")
+
+[sub_resource type="AudioStreamInteractive" id="AudioStreamInteractive_nf7h6"]
+clip_count = 1
+clip_0/name = &""
+clip_0/stream = SubResource("AudioStreamRandomizer_12scf")
+clip_0/auto_advance = 0
+
+[node name="AudioController" type="Node2D" unique_id=1321118255]
+script = ExtResource("1_5dt40")
+
+[node name="Atmos" type="AudioStreamPlayer" parent="." unique_id=1846255801]
+stream = SubResource("AudioStreamInteractive_6fhfa")
+bus = &"Atmos"
+
+[node name="Music" type="AudioStreamPlayer" parent="." unique_id=240076795]
+
+[node name="Shoot" type="AudioStreamPlayer" parent="." unique_id=1476378853]
+stream = SubResource("AudioStreamInteractive_nf7h6")
