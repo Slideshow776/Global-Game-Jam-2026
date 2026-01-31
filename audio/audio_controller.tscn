@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://bs4tn8br2eprl"]
+[gd_scene format=3 uid="uid://b8qn0yb3gdu0d"]
 
 [ext_resource type="Script" uid="uid://b88qlvl80mtek" path="res://audio/audio_controller.gd" id="1_5dt40"]
 [ext_resource type="AudioStream" uid="uid://2nx7u17ltjhi" path="res://audio/assets/Ambience.wav" id="2_cedxo"]
@@ -62,9 +62,10 @@ script = ExtResource("1_5dt40")
 
 [node name="Atmos" type="AudioStreamPlayer" parent="." unique_id=1846255801]
 stream = SubResource("AudioStreamInteractive_6fhfa")
-bus = &"Atmos"
+bus = &"Ambience"
 
 [node name="Music" type="AudioStreamPlayer" parent="." unique_id=240076795]
 
 [node name="Shoot" type="AudioStreamPlayer" parent="." unique_id=1476378853]
 stream = SubResource("AudioStreamInteractive_nf7h6")
+bus = &"SFX"

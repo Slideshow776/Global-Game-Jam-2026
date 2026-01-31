@@ -11,7 +11,7 @@ func _ready() -> void:
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
-		if event.button_index == MOUSE_BUTTON_LEFT:
+		if event is InputEventMouseButton && event.button_index == MOUSE_BUTTON_LEFT && event.pressed:
 			GameState.gun_clicked.emit()
 			var obj = test_object.instantiate() as Node2D
 			add_child(obj)
