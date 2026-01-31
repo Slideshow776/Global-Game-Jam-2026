@@ -5,6 +5,7 @@ var originalxposition : float
 @onready var splat = $Splatter
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	GameState.mutant_died.connect(clean_chair)
 	originalxposition = position.x
 	position.x = -1000 
 	var tween := create_tween()
