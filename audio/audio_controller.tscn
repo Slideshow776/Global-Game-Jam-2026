@@ -4,7 +4,14 @@
 [ext_resource type="AudioStream" uid="uid://2nx7u17ltjhi" path="res://audio/assets/Ambience.wav" id="2_cedxo"]
 [ext_resource type="AudioStream" uid="uid://baucn82dj47lg" path="res://audio/assets/Ambience2.wav" id="3_cedxo"]
 [ext_resource type="AudioStream" uid="uid://eao4rilrngr0" path="res://audio/assets/Ambience_Transition.wav" id="4_6fhfa"]
-[ext_resource type="AudioStream" uid="uid://cq50y2qd35vwt" path="res://audio/assets/SFX/Shoot1.wav" id="5_vj1x0"]
+[ext_resource type="AudioStream" uid="uid://chc8pilk3thn1" path="res://audio/assets/SFX/Shoot1.wav" id="5_vj1x0"]
+[ext_resource type="AudioStream" uid="uid://c0fu4wg2aop3w" path="res://audio/assets/SFX/Mutant/Hit/MutantHit_1.wav" id="6_h7rxg"]
+[ext_resource type="AudioStream" uid="uid://dk13m3tdtl1xr" path="res://audio/assets/SFX/Mutant/Hit/MutantHit_2.wav" id="7_y6d7d"]
+[ext_resource type="AudioStream" uid="uid://cvn81t2mci2mx" path="res://audio/assets/SFX/Mutant/Hit/MutantHit_3.wav" id="8_2fxmg"]
+
+[sub_resource type="Curve" id="Curve_h7rxg"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
 
 [sub_resource type="AudioStreamInteractive" id="AudioStreamInteractive_6fhfa"]
 clip_count = 3
@@ -57,8 +64,20 @@ clip_0/name = &""
 clip_0/stream = SubResource("AudioStreamRandomizer_12scf")
 clip_0/auto_advance = 0
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_vys8g"]
+random_pitch = 1.0293022
+random_volume_offset_db = 1.0
+streams_count = 3
+stream_0/stream = ExtResource("6_h7rxg")
+stream_1/stream = ExtResource("7_y6d7d")
+stream_2/stream = ExtResource("8_2fxmg")
+
 [node name="AudioController" type="Node2D" unique_id=1321118255]
 script = ExtResource("1_5dt40")
+low_volume = 0.2
+duration = 1.0
+duration_out = 5.0
+volume_curve = SubResource("Curve_h7rxg")
 
 [node name="Atmos" type="AudioStreamPlayer" parent="." unique_id=1846255801]
 stream = SubResource("AudioStreamInteractive_6fhfa")
@@ -69,3 +88,6 @@ bus = &"Ambience"
 [node name="Shoot" type="AudioStreamPlayer" parent="." unique_id=1476378853]
 stream = SubResource("AudioStreamInteractive_nf7h6")
 bus = &"SFX"
+
+[node name="MutantHit" type="AudioStreamPlayer" parent="." unique_id=1856521775]
+stream = SubResource("AudioStreamRandomizer_vys8g")
