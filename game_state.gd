@@ -3,12 +3,20 @@ signal gun_clicked
 signal mutant_hit
 signal brain_hit
 signal mutant_spawn
+signal mutant_died
+
+var mutant_chair_anchor = Vector2(289, 501)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	gun_clicked.connect(gun_play_sound)
+<<<<<<< HEAD
 	#Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
 
+=======
+	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
+	
+>>>>>>> main
 func helloWorld():
 	print_debug("hello world")
 

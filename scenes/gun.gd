@@ -3,7 +3,6 @@ extends Node2D
 # Called when the node enters the scene tree for the first time.
 @onready var gun_pos = $gun/gunpoint
 @onready var gun = $gun
-@onready var test_object = preload("res://scenes/test_object.tscn")
 
 func _ready() -> void:
 	pass
