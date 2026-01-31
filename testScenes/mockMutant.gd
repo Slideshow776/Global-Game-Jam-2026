@@ -1,5 +1,5 @@
 extends Node2D
-class_name Mutant
+class_name MockMutant
 
 var originalyposition : float 
 signal mutantHit
