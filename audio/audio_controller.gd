@@ -7,11 +7,12 @@ extends Node2D
 @export var duration_out: float = 0.5
 @export var volume_curve: Curve
 
+
+
 var volume_time: float = 1.0
 var is_falling: bool = false
 
 
-#var ShootGun: Array = [$Shoot.play,$MutantHit.play]
 func _playAtmosphere():
 	$Atmos.play()
 	
@@ -37,6 +38,7 @@ func _ready():
 	#Mutant Hit
 	if not mute:
 		GameState.mutant_hit.connect(_mutantHitSounds)
+		GameState.mutant_died.connect($MutantDead.play)
 	
 	#Play atmos at start of the game
 	if not mute:
