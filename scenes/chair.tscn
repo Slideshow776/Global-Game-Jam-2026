@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://cttrm7okfclgv"]
+
+[ext_resource type="Texture2D" uid="uid://c2c24guqhnf7p" path="res://assets/images/chair.png" id="1_i2o7u"]
+[ext_resource type="Script" uid="uid://c0mf8ffqe45ig" path="res://scenes/chair.gd" id="2_3fp06"]
+
+[node name="Chair" type="Sprite2D" unique_id=1717929055]
+scale = Vector2(1.4733902, 1.3883922)
+texture = ExtResource("1_i2o7u")
+script = ExtResource("2_3fp06")
