@@ -15,9 +15,9 @@ run/main_scene="res://scenes/game.tscn"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://assets/images/icon.svg"
 
-[autoload]
+[display]
 
-GameState="*uid://btxenrfccxpfb"
+window/size/viewport_height=864
 
 [dotnet]
 
