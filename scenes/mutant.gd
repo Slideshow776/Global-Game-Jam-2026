@@ -11,7 +11,7 @@ func _ready() -> void:
 	position.y = -1000 
 	
 	var mutantColor: Color = Color(randf_range(0.1, 1.0), randf_range(0.1, 1.0), randf_range(0.1, 1.0), 1)
-	self_modulate = mutantColor
+	modulate = mutantColor
 	
 func _on_timer_timeout() -> void:
 	
