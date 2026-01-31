@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://cnjlxfr6q8hmd"]
 
-[ext_resource type="Script" path="res://testScenes/MainScene.gd" id="1_2xapt"]
+[ext_resource type="Script" uid="uid://bc03n2kgp8byg" path="res://testScenes/MainScene.gd" id="1_2xapt"]
 [ext_resource type="PackedScene" uid="uid://cttrm7okfclgv" path="res://scenes/chair.tscn" id="1_ttfku"]
-[ext_resource type="PackedScene" path="res://testScenes/mockMutant.tscn" id="3_j7nse"]
+[ext_resource type="PackedScene" uid="uid://js7ysoyndkg4" path="res://testScenes/mockMutant.tscn" id="3_j7nse"]
 [ext_resource type="PackedScene" uid="uid://dlmao0kysnkd" path="res://scenes/arm.tscn" id="3_w83e3"]
 
 [node name="TestGame" type="Node2D" unique_id=1847825036]
