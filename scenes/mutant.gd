@@ -21,6 +21,8 @@ func _ready() -> void:
 	# REMOVE ME!!
 	GameState.gun_clicked.connect(mock_function)
 	
+	spawn_brain()
+	
 func _on_timer_timeout() -> void:
 	var tween := create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_BOUNCE)
 	tween.tween_property(self, "position:y", originalyposition, 0.7)
@@ -46,5 +48,23 @@ func on_death():
 	tweenXY.tween_property(self, "position", Vector2(position.x + 1000, position.y - 300), time)
 	await tweenXY.finished
 	GameState.mutant_spawn.emit()
+	
 	queue_free()
 	
+var brain_scene = preload("res://scenes/brain.tscn")
+	
+func spawn_brain():
+	var brain_spots: Array = get_tree().get_nodes_in_group("brains")
+	for brain in brain_spots:
+		print(brain.get_children())
+	print(brain_spots)
+	var rng = RandomNumberGenerator.new()
+	
+	var randomNumber = rng.randi_range(0, brain_spots.size() - 1)
+	print(randomNumber)
+	var new_brain = brain_scene.instantiate()
+	
+	print(brain_spots.size())
+	
+	# 3. Add to the scene tree
+	brain_spots[randomNumber].add_child(new_brain)

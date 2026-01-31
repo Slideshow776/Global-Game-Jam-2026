@@ -13,5 +13,5 @@ func _process(delta: float) -> void:
 func _input_event(viewport: Node, event: InputEvent, shape_idx: int):
 	if event is InputEventMouseButton && event.button_index == MOUSE_BUTTON_LEFT && event.pressed:
 			print(name)
-			brain_sprite.visible = true
 			GameState.brain_hit.emit()
+			queue_free()

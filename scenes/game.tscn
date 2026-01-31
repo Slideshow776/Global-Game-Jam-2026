@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://bc03n2kgp8byg" path="res://testScenes/MainScene.gd" id="1_lbhrr"]
 [ext_resource type="PackedScene" uid="uid://cttrm7okfclgv" path="res://scenes/chair.tscn" id="1_lnu2h"]
-[ext_resource type="PackedScene" uid="uid://ctl4sbj7wc1x4" path="res://scenes/mutant.tscn" id="2_lbhrr"]
 [ext_resource type="PackedScene" uid="uid://dlmao0kysnkd" path="res://scenes/arm.tscn" id="4_lbhrr"]
 
 [node name="Game" type="Node2D" unique_id=1847825036]
@@ -13,9 +12,6 @@ position = Vector2(-34.000004, -212)
 scale = Vector2(1.3324018, 1.2555372)
 
 [node name="mutantCell" type="Node2D" parent="." unique_id=1482415348]
-
-[node name="Mutant" parent="mutantCell" unique_id=1784549054 instance=ExtResource("2_lbhrr")]
-position = Vector2(286, 481)
 
 [node name="GUI" type="CanvasLayer" parent="." unique_id=1506688441]
 
