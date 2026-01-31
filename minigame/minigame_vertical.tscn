@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://ctmxbj27f4iy2"]
+
+[ext_resource type="Script" uid="uid://gk52reuqq0o" path="res://minigame/mini_timebar_vertical.gd" id="1_ch548"]
+
+[node name="MinigameVertical" type="Node2D" unique_id=330057521]
+
+[node name="Control" type="Control" parent="." unique_id=1231681843]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_ch548")
