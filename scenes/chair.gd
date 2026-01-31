@@ -10,10 +10,7 @@ func _ready() -> void:
 	position.x = -1000 
 	var tween := create_tween()
 	tween.tween_property(self, "position:x", originalxposition, 1.0)
-	#arja.mutant_hit.connect(_on_mutant_hit_do_splat)
-		
-func clean_chair():
-	print_debug("cleaned the chair")
+	GameState.mutant_hit.connect(_on_mutant_hit_do_splat)
 	
 func _on_mutant_hit_do_splat ():
 	splat.visible = true
