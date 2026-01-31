@@ -1,16 +1,25 @@
 [gd_scene format=3 uid="uid://h6mcf7fsqf5r"]
 
-[ext_resource type="Texture2D" uid="uid://c0ktvgfl2w4h6" path="res://assets/images/mutants/proto_0.png" id="1_yqjtg"]
+[ext_resource type="PackedScene" uid="uid://cttrm7okfclgv" path="res://scenes/chair.tscn" id="1_lnu2h"]
+[ext_resource type="PackedScene" uid="uid://ctl4sbj7wc1x4" path="res://scenes/mutant.tscn" id="2_lbhrr"]
 [ext_resource type="Texture2D" uid="uid://ceoac0ierh8lg" path="res://assets/images/gun.PNG" id="2_lnu2h"]
 
 [node name="Game" type="Node2D" unique_id=1847825036]
 
-[node name="Mutant" type="Sprite2D" parent="." unique_id=851686825]
-position = Vector2(346.99997, 283.99997)
-scale = Vector2(0.9090331, 0.93052936)
-texture = ExtResource("1_yqjtg")
+[node name="Chair" parent="." unique_id=1717929055 instance=ExtResource("1_lnu2h")]
+position = Vector2(289.59375, 500.99997)
+scale = Vector2(1.3324018, 1.2555372)
+
+[node name="Mutant" parent="." unique_id=1784549054 instance=ExtResource("2_lbhrr")]
+position = Vector2(263.43634, 515.38794)
+
+[node name="Timer" type="Timer" parent="Mutant" unique_id=1027224886]
+wait_time = 3.0
+one_shot = true
+autostart = true
 
 [node name="gun" type="Sprite2D" parent="." unique_id=1738811230]
+visible = false
 position = Vector2(579, 550)
 scale = Vector2(0.8281853, 0.75549453)
 texture = ExtResource("2_lnu2h")
@@ -30,3 +39,5 @@ offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
 text = "epplekake"
+
+[connection signal="timeout" from="Mutant/Timer" to="Mutant" method="_on_timer_timeout"]
