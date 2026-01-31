@@ -1,5 +1,6 @@
 extends Node
 signal gun_clicked
+signal mutant_hit
 signal mutant_spawn
 
 # Called when the node enters the scene tree for the first time.
