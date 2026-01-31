@@ -10,36 +10,38 @@ extends Node2D
 var volume_time: float = 1.0
 var is_falling: bool = false
 
+
 #var ShootGun: Array = [$Shoot.play,$MutantHit.play]
+func _playAtmosphere():
+	$Atmos.play()
+	
+func _changeAtmosphere():
+	var AtmosPlayback: AudioStreamPlaybackInteractive = $Atmos.get_stream_playback()
+	AtmosPlayback.switch_to_clip(1)
 
 func _mutantHitSounds():
 	$MutantHit.play()
 	$Shoot.play()
+	_changeAtmosphere()
 	
 func _sidechain():
 	is_falling = true
 	
-
-	
 func _ready():
+	
 	#Shoot Gun
 	if not mute:
 		GameState.gun_clicked.connect($Shoot.play)
 		GameState.gun_clicked.connect(_sidechain)
+	
 	#Mutant Hit
 	if not mute:
 		GameState.mutant_hit.connect(_mutantHitSounds)
 	
 	#Play atmos at start of the game
 	if not mute:
-		$Atmos.play()
-		await get_tree().create_timer(2.0).timeout
-		
-		#Enviroment change
-		var AtmosPlayback: AudioStreamPlaybackInteractive = $Atmos.get_stream_playback()
-		if AtmosPlayback.is_playing():
-			AtmosPlayback.switch_to_clip(1)
-			print("Switched to clip 1")
+		_playAtmosphere()
+
 
 func _process(delta: float) -> void:
 	if is_falling:
