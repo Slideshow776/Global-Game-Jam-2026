@@ -15,7 +15,6 @@ func _ready() -> void:
 	position = GameState.mutant_chair_anchor
 	originalyposition = position.y
 	position.y = -1000 
-	print_debug("mutant says skjera tjommi")
 	GameState.mutant_died.connect(on_death)	
 	
 	# REMOVE ME!!
@@ -25,10 +24,6 @@ func _on_timer_timeout() -> void:
 	var tween := create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_BOUNCE)
 	tween.tween_property(self, "position:y", originalyposition, 0.7)
 
-#func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
-#	if event is InputEventMouseButton && event.button_index == MOUSE_BUTTON_LEFT && event.pressed:
-#		print("event click")
-#		GameState.mutant_hit.emit()
 		
 func mock_function():
 	GameState.mutant_died.emit()
