@@ -45,7 +45,23 @@ offset_right = 909.0
 offset_bottom = 94.0
 bbcode_enabled = true
 text = "Score:"
+scroll_active = false
 script = ExtResource("3_kvpfn")
+
+[node name="HealthBar" type="ProgressBar" parent="GUI" unique_id=1661078210]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -983.0
+offset_top = 63.0
+offset_right = -979.0
+offset_bottom = 112.0
+grow_horizontal = 0
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 32
+max_value = 500.0
+step = 100.0
+script = ExtResource("5_iywne")
 
 [node name="Player" parent="." unique_id=30301401 instance=ExtResource("4_lbhrr")]
 
@@ -80,16 +96,3 @@ script = ExtResource("8_vtaks")
 
 [node name="SceneHandler" type="Node2D" parent="." unique_id=368644432]
 script = ExtResource("4_iywne")
-
-[node name="HealthBar" type="ProgressBar" parent="." unique_id=1661078210]
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = 1116.0
-offset_top = 15.0
-offset_right = 1120.0
-offset_bottom = 42.0
-grow_horizontal = 0
-max_value = 500.0
-step = 100.0
-script = ExtResource("5_iywne")

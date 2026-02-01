@@ -19,7 +19,6 @@ func _ready() -> void:
 	position = GameState.mutant_chair_anchor
 	originalyposition = position.y
 	position.y = -1000 
-	print_debug("mutant says skjera tjommi")
 	timer.timeout.connect(_on_timer_timeout)
 	
 	# REMOVE ME!!
@@ -35,12 +34,7 @@ func _on_timer_timeout() -> void:
 	GameState.mutant_landed.emit()
 	spawn_brain()
 	GameState.mutant_sprite_updated.emit()
-
-#func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
-#	if event is InputEventMouseButton && event.button_index == MOUSE_BUTTON_LEFT && event.pressed:
-#		print("event click")
-#		GameState.mutant_hit.emit()
-		
+	
 func mock_function():
 	await get_tree().create_timer(0.2).timeout
 	var temp: Sprite2D = hole.instantiate()

@@ -18,7 +18,6 @@ func _shootDebug():
 	#audio_stream_player_2d.play_sound_effect_from_library("Shoot2")
 	$Shoot.play()
 	$ShootImpack.play()
-	print("Shoot Play")
 
 func _playAtmosphere():
 	$Atmos.play()
@@ -42,8 +41,6 @@ func _sidechain():
 	is_falling = true
 	
 func _ready():
-	print(audio_stream_player_2d)
-	
 	GameState.end_game.connect(_ChangeAtmosphereToEnd)
 	#Shoot Gun
 	if not mute:

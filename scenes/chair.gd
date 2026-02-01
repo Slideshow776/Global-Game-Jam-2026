@@ -22,7 +22,6 @@ var splatter_scene = preload("res://scenes/splatter.tscn")
 
 func spawn_splat(location: Vector2):
 	await get_tree().create_timer(0.2).timeout
-	print("splat spawn")
 	
 	# 1. Instantiate the scene
 	var new_sprite = splatter_scene.instantiate()
