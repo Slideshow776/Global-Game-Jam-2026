@@ -25,6 +25,7 @@ func _ready() -> void:
 	# REMOVE ME!!
 	GameState.gun_clicked.connect(mock_function)
 	GameState.brain_hit.connect(on_death)
+	GameState.end_game.connect(on_death)
 	
 	
 func _on_timer_timeout() -> void:
@@ -59,6 +60,7 @@ func on_death():
 	tweenRot.tween_property(self, "rotation_degrees", 360.0, time).as_relative()
 	tweenXY.tween_property(self, "position", Vector2(position.x + 1000, position.y - 300), time)
 	await tweenXY.finished
+
 	GameState.mutant_spawn.emit()
 	GameState.brain_remove.emit()
 	queue_free()
