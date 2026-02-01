@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://dxmtkhopsdhde"]
+
+[ext_resource type="Script" uid="uid://b4ur7l3qrfl7a" path="res://testScenes/armMock.gd" id="1_uqwg0"]
+[ext_resource type="Texture2D" uid="uid://bccq7gss6wl6p" path="res://assets/images/arm.png" id="2_b7nm5"]
+[ext_resource type="Script" uid="uid://h8il8hkp044h" path="res://testScenes/tool_container.gd" id="3_p6q5h"]
+[ext_resource type="Script" uid="uid://cgkul6bmhoyx3" path="res://testScenes/direction_tool.gd" id="4_1v8mw"]
+[ext_resource type="Texture2D" uid="uid://dkfg2pbo28lbl" path="res://assets/images/circle.png" id="5_1v8mw"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_muf2m"]
+radius = 19.026299
+
+[node name="Player" type="Node2D" unique_id=30301401]
+script = ExtResource("1_uqwg0")
+
+[node name="gun" type="StaticBody2D" parent="." unique_id=1545287840]
+position = Vector2(-7, -100)
+
+[node name="gunpoint" type="CollisionShape2D" parent="gun" unique_id=770464134]
+shape = SubResource("CircleShape2D_muf2m")
+
+[node name="arm_sprite" type="Sprite2D" parent="gun" unique_id=2023479808]
+position = Vector2(21, 159)
+scale = Vector2(0.8281853, 0.75549453)
+texture = ExtResource("2_b7nm5")
+
+[node name="toolContainer" type="Node2D" parent="gun" unique_id=1267132674]
+script = ExtResource("3_p6q5h")
+
+[node name="directionTool" type="Node2D" parent="gun/toolContainer" unique_id=2084245864]
+script = ExtResource("4_1v8mw")
+
+[node name="scanner" type="Sprite2D" parent="gun/toolContainer/directionTool" unique_id=1391278187]
+texture = ExtResource("5_1v8mw")

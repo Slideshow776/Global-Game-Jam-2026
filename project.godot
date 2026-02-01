@@ -26,6 +26,8 @@ GameState="*uid://q4xdlkx4w7yw"
 [display]
 
 window/size/viewport_height=864
+window/stretch/mode="viewport"
+window/stretch/aspect="expand"
 
 [dotnet]
 

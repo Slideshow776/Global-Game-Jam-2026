@@ -20,7 +20,5 @@ position = Vector2(21, 159)
 scale = Vector2(0.8281853, 0.75549453)
 texture = ExtResource("2_muf2m")
 
-[node name="Timer" type="Timer" parent="." unique_id=1723548587]
-unique_name_in_owner = true
-wait_time = 0.6
+[node name="Timer" type="Timer" parent="." unique_id=968776271]
 one_shot = true
