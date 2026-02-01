@@ -166,3 +166,4 @@ bus = &"Shoot"
 
 [node name="MutantDrop" type="AudioStreamPlayer" parent="." unique_id=1308018107]
 stream = SubResource("AudioStreamRandomizer_llkha")
+bus = &"Mutant SFX"
