@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://dm2bgy3trap0o"]
+
+[ext_resource type="Texture2D" uid="uid://b3wqh15vmrlkf" path="res://assets/images/background.png" id="1_cbsqf"]
+[ext_resource type="Texture2D" uid="uid://2xdpdcahrkmt" path="res://assets/images/fps_mask.png" id="2_wisxt"]
+[ext_resource type="Texture2D" uid="uid://brl4h2mjrqxry" path="res://assets/images/mutant.png" id="3_wax1t"]
+[ext_resource type="Script" path="res://scenes/ex_ray_vision.gd" id="3_wisxt"]
+[ext_resource type="PackedScene" path="res://scenes/ex_ray_light_node.tscn" id="5_wax1t"]
+
+[node name="Background" type="TextureRect" unique_id=573596355]
+offset_right = 1144.0
+offset_bottom = 866.0
+size_flags_horizontal = 4
+size_flags_vertical = 6
+texture = ExtResource("1_cbsqf")
+expand_mode = 1
+stretch_mode = 3
+
+[node name="FaceMask" type="TextureRect" parent="." unique_id=1339070496]
+z_index = 10
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_wisxt")
+
+[node name="EXRayVision" type="DirectionalLight2D" parent="FaceMask" unique_id=1079073541]
+color = Color(0, 0, 0, 0.5058824)
+blend_mode = 2
+script = ExtResource("3_wisxt")
+
+[node name="MutantShadow" type="PointLight2D" parent="FaceMask/EXRayVision" unique_id=618232047]
+z_index = 13
+position = Vector2(918, 393)
+color = Color(0.09019608, 0.09019608, 0.09019608, 1)
+energy = 6.83
+blend_mode = 1
+texture = ExtResource("3_wax1t")
+
+[node name="ExRayLightNode" parent="FaceMask/EXRayVision/MutantShadow" unique_id=169095143 instance=ExtResource("5_wax1t")]
+position = Vector2(-37, -182)
+
+[node name="LightContainer" type="Node2D" parent="FaceMask/EXRayVision/MutantShadow" unique_id=255006968]

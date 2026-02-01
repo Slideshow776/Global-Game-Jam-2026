@@ -5,7 +5,11 @@ var originalyposition : float
 signal mutantHit
 signal mutantDead
 
-@onready var sprite_2d: Sprite2D = $Area2D/Sprite2D
+@onready var back_buffer_copy: BackBufferCopy = %BackBufferCopy
+@onready var sprite_2d: Sprite2D = %Sprite2D
+
+@onready var hole: PackedScene = preload("res://scenes/hole_mask.tscn")
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	var mutantColor: Color = Color(randf_range(0.1, 1.0), randf_range(0.1, 1.0), randf_range(0.1, 1.0), 1)
@@ -33,7 +37,13 @@ func _on_timer_timeout() -> void:
 #		GameState.mutant_hit.emit()
 		
 func mock_function():
-	GameState.mutant_died.emit()
+	var temp: Sprite2D = hole.instantiate()
+	back_buffer_copy.add_child(temp)
+	temp.rotation_degrees = randf_range(0, 360)
+	temp.scale = Vector2.ONE * randf_range(0.1, 0.15)
+	temp.global_position = get_global_mouse_position()
+	#GameState.mutant_died.emit()
+	
 	
 func on_death():
 	var tweenY := create_tween()
