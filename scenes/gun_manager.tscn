@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://bsepi0si31ghp"]
+
+[sub_resource type="GDScript" id="GDScript_e4tym"]
+script/source = "extends Node2D
+@export var gun = null
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	GameState.gun_clicked.connect()
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
+[node name="gore_manager" type="Node2D" unique_id=308210709]
+script = SubResource("GDScript_e4tym")

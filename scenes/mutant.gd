@@ -25,13 +25,16 @@ func _ready() -> void:
 	# REMOVE ME!!
 	GameState.gun_clicked.connect(mock_function)
 	GameState.brain_hit.connect(on_death)
+	GameState.end_game.connect(on_death)
 	
 	
 func _on_timer_timeout() -> void:
 	var tween := create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_BOUNCE)
 	tween.tween_property(self, "position:y", originalyposition, 0.7)
 	await tween.finished
+	GameState.mutant_landed.emit()
 	spawn_brain()
+	GameState.mutant_sprite_updated.emit()
 
 #func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 #	if event is InputEventMouseButton && event.button_index == MOUSE_BUTTON_LEFT && event.pressed:
@@ -39,6 +42,7 @@ func _on_timer_timeout() -> void:
 #		GameState.mutant_hit.emit()
 		
 func mock_function():
+	await get_tree().create_timer(0.2).timeout
 	var temp: Sprite2D = hole.instantiate()
 	back_buffer_copy.add_child(temp)
 	temp.rotation_degrees = randf_range(0, 360)
@@ -58,6 +62,7 @@ func on_death():
 	tweenRot.tween_property(self, "rotation_degrees", 360.0, time).as_relative()
 	tweenXY.tween_property(self, "position", Vector2(position.x + 1000, position.y - 300), time)
 	await tweenXY.finished
+
 	GameState.mutant_spawn.emit()
 	GameState.brain_remove.emit()
 	queue_free()

@@ -1,4 +1,5 @@
 extends Node2D
+class_name Splatter
 
 func _ready() -> void:
 	rotation_degrees = randf_range(0, 360)

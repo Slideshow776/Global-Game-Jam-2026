@@ -7,18 +7,24 @@ extends Node2D
 
 @export var health = 500
 
+#Cannot be shorten than 0.6
+#	@onready var timer: Timer = %Timer
+
 func _ready() -> void:
 	GameState.mutant_hit.connect(tank_hit)
 	GameState.brain_hit.connect(brain_hit)
 	GameState.toggle_exray.connect(GameState.flip_exray)
 
-func _input(event: InputEvent) -> void:	
-	if event is InputEventMouseButton:
+func _input(event: InputEvent) -> void:
+	if event is InputEventMouseButton && event.button_index == MOUSE_BUTTON_LEFT && event.pressed:
 		if event.button_index == MOUSE_BUTTON_LEFT and timer.is_stopped():
 			if(GameState.exray_enabled):
 				return
 			GameState.gun_clicked.emit()
 			timer.start()
+			var tween = create_tween()
+			tween.tween_property(self, "modulate:r", 255.0, 0.0)
+			tween.tween_property(self, "modulate:r", 1.0, timer.wait_time)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
