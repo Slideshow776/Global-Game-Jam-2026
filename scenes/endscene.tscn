@@ -1,0 +1,135 @@
+[gd_scene format=3 uid="uid://cvqelny2v3ktd"]
+
+[ext_resource type="PackedScene" uid="uid://cttrm7okfclgv" path="res://scenes/chair.tscn" id="1_lnu2h"]
+[ext_resource type="PackedScene" uid="uid://dlmao0kysnkd" path="res://scenes/arm.tscn" id="4_lbhrr"]
+[ext_resource type="Texture2D" uid="uid://clnguthydyr1q" path="res://assets/images/mask/mask.png" id="4_m0gyy"]
+[ext_resource type="Texture2D" uid="uid://d0wm11i53dyh5" path="res://assets/images/human_no_blood.png" id="5_n53qy"]
+[ext_resource type="Script" uid="uid://bhamj43r5exhw" path="res://scenes/endscene.gd" id="5_p4uuy"]
+
+[sub_resource type="Animation" id="Animation_m0gyy"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Human:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../mutantCell:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_n53qy"]
+resource_name = "removemask"
+length = 5.0666666
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(672, 102), Vector2(1398, -196)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Human:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.5, 1.5333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../mutantCell:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.13333333, 1.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_p4uuy"]
+_data = {
+&"RESET": SubResource("Animation_m0gyy"),
+&"removemask": SubResource("Animation_n53qy")
+}
+
+[node name="EndScene" type="Node2D" unique_id=1847825036]
+script = ExtResource("5_p4uuy")
+
+[node name="Chair" parent="." unique_id=1717929055 instance=ExtResource("1_lnu2h")]
+position = Vector2(-34.000004, -212)
+scale = Vector2(1.3324018, 1.2555372)
+
+[node name="mutantCell" type="Node2D" parent="." unique_id=1482415348]
+
+[node name="GUI" type="CanvasLayer" parent="." unique_id=1506688441]
+
+[node name="Label" type="Label" parent="GUI" unique_id=850659862]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -11.5
+offset_right = 40.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "epplekake"
+
+[node name="Player" parent="." unique_id=30301401 instance=ExtResource("4_lbhrr")]
+
+[node name="Human" type="Sprite2D" parent="." unique_id=1499641457]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(300, 458.00003)
+scale = Vector2(1.3186058, 1.2715127)
+texture = ExtResource("5_n53qy")
+
+[node name="Node2D" type="Node2D" parent="." unique_id=1304097171]
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D" unique_id=325297866]
+position = Vector2(572, 446)
+texture = ExtResource("4_m0gyy")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Node2D" unique_id=85951218]
+unique_name_in_owner = true
+libraries/ = SubResource("AnimationLibrary_p4uuy")
