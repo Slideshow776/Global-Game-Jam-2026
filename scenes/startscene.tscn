@@ -1,0 +1,222 @@
+[gd_scene format=3 uid="uid://3vjifkar6vub"]
+
+[ext_resource type="Script" uid="uid://qqwoeoguds1e" path="res://scenes/startscene.gd" id="1_j16hr"]
+[ext_resource type="PackedScene" uid="uid://cttrm7okfclgv" path="res://scenes/chair.tscn" id="1_lnu2h"]
+[ext_resource type="Texture2D" uid="uid://clnguthydyr1q" path="res://assets/images/mask/mask.png" id="4_m0gyy"]
+[ext_resource type="Texture2D" uid="uid://dpdeulk4o6tww" path="res://assets/images/mask/mask_w_text.png" id="5_j16hr"]
+[ext_resource type="Texture2D" uid="uid://d0wm11i53dyh5" path="res://assets/images/human_no_blood.png" id="5_n53qy"]
+[ext_resource type="Texture2D" uid="uid://b3wqh15vmrlkf" path="res://assets/images/background.png" id="6_p4uuy"]
+
+[sub_resource type="Animation" id="Animation_m0gyy"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Human:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../mutantCell:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("TextMask:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../Chair:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-34.000004, -212)]
+}
+
+[sub_resource type="Animation" id="Animation_j16hr"]
+resource_name = "addmask"
+length = 4.0333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(242, 180), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.6, 0.6), Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TextMask:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 3.9962206),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Chair:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.6333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-688.99994, -212), Vector2(-34.000004, -212)]
+}
+
+[sub_resource type="Animation" id="Animation_n53qy"]
+resource_name = "removemask"
+length = 5.0666666
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(672, 102), Vector2(1398, -196)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Human:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.5, 1.5333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../mutantCell:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.13333333, 1.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_p4uuy"]
+_data = {
+&"RESET": SubResource("Animation_m0gyy"),
+&"addmask": SubResource("Animation_j16hr"),
+&"removemask": SubResource("Animation_n53qy")
+}
+
+[node name="StartScene" type="Node2D" unique_id=1847825036]
+script = ExtResource("1_j16hr")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=8938685]
+z_index = -10
+offset_right = 1152.0
+offset_bottom = 864.0
+texture = ExtResource("6_p4uuy")
+
+[node name="Chair" parent="." unique_id=1717929055 instance=ExtResource("1_lnu2h")]
+position = Vector2(-34.000004, -212)
+scale = Vector2(1.3324018, 1.2555372)
+script = null
+
+[node name="mutantCell" type="Node2D" parent="." unique_id=1482415348]
+
+[node name="GUI" type="CanvasLayer" parent="." unique_id=1506688441]
+
+[node name="Human" type="Sprite2D" parent="." unique_id=1499641457]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(300, 458.00003)
+scale = Vector2(1.3186058, 1.2715127)
+texture = ExtResource("5_n53qy")
+
+[node name="Node2D" type="Node2D" parent="." unique_id=1304097171]
+
+[node name="TextMask" type="Sprite2D" parent="Node2D" unique_id=325297866]
+position = Vector2(572, 446)
+texture = ExtResource("5_j16hr")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Node2D" unique_id=85951218]
+unique_name_in_owner = true
+libraries/ = SubResource("AnimationLibrary_p4uuy")
+
+[node name="Mask" type="Sprite2D" parent="Node2D" unique_id=69368015]
+position = Vector2(572, 446)
+texture = ExtResource("4_m0gyy")
+
+[connection signal="animation_finished" from="Node2D/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
