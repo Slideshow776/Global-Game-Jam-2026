@@ -8,14 +8,12 @@ func _ready():
 	stream.polyphony = custom_max_polyphony
 	
 func play_sound_effect_from_library(_tag: String) -> void:
-	print(_tag)
 	if _tag:
 		var audio_stream = audio_library.get_audio_stream(_tag)
 		
 		if !playing: self.play()
 		
 		var polyphonic_stream_playback := self.get_stream_playback()
-		print("Test Audio Stream", polyphonic_stream_playback)
 		polyphonic_stream_playback.play_stream(audio_stream)
 		
 	else:

@@ -31,9 +31,7 @@ func recieved_brain(pos):
 
 func reveal_if_in_range(distance):
 	var new_scale = Vector2(range / scanner.texture.get_size().x, range / scanner.texture.get_size().y)
-	print_debug("scale: ", scanner.scale)
 	scanner.scale = new_scale
-	print_debug("scale: ", scanner.scale)
 	if distance <= range:
 		GameState.reveal_brain.emit()
 	

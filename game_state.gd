@@ -26,7 +26,6 @@ var current_health = 500
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	gun_clicked.connect(gun_play_sound)
 	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
 	brain_hit.connect(inc_score)
 	toggle_exray.emit(false)
@@ -43,17 +42,12 @@ func flip_exray():
 	else:
 		exray_enabled = true
 
-func gun_play_sound():
-	#print_debug("Pang :-")
-	pass
-
 func inc_score():
 	score += 1
 	update_score.emit()
 	
 	
 func update_health(health):
-	print(current_health)
 	current_health += health
 	if current_health <= 0:
 		end_game.emit()

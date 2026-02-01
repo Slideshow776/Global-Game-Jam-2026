@@ -18,7 +18,6 @@ func _shootDebug():
 	#audio_stream_player_2d.play_sound_effect_from_library("Shoot2")
 	$Shoot.play()
 	$ShootImpack.play()
-	print("Shoot Play")
 
 func _playAtmosphere():
 	$Atmos.play()

@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://3vjifkar6vub"]
+[gd_scene format=3 uid="uid://pt4hwaxb54hy"]
 
-[ext_resource type="Script" uid="uid://qqwoeoguds1e" path="res://scenes/startscene.gd" id="1_j16hr"]
+[ext_resource type="Script" uid="uid://f56oec3mr8h" path="res://scenes/startscene.gd" id="1_j16hr"]
 [ext_resource type="PackedScene" uid="uid://cttrm7okfclgv" path="res://scenes/chair.tscn" id="1_lnu2h"]
 [ext_resource type="Texture2D" uid="uid://clnguthydyr1q" path="res://assets/images/mask/mask.png" id="4_m0gyy"]
 [ext_resource type="Texture2D" uid="uid://dpdeulk4o6tww" path="res://assets/images/mask/mask_w_text.png" id="5_j16hr"]
@@ -84,7 +84,7 @@ tracks/5/keys = {
 
 [sub_resource type="Animation" id="Animation_j16hr"]
 resource_name = "addmask"
-length = 4.0333333
+length = 5.133333
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -116,10 +116,10 @@ tracks/2/path = NodePath("TextMask:modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 3.9962206),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0.53333336, 1.6, 4.133333, 4.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
