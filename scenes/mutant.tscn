@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://bljmgiu6snykd" path="res://scenes/mutant.gd" id="2_3umk4"]
 [ext_resource type="Script" uid="uid://ctwnj4j8cml8m" path="res://scenes/bodypart.gd" id="3_3umk4"]
 [ext_resource type="Script" path="res://scenes/brainnode.gd" id="6_4yu1w"]
+[ext_resource type="Script" uid="uid://csvlbymq7bxi7" path="res://scenes/brainnode.gd" id="6_4yu1w"]
 
 [node name="Mutant" type="Node2D" unique_id=1321833085]
 script = ExtResource("2_3umk4")
