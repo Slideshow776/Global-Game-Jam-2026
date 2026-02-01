@@ -2,7 +2,6 @@
 
 [ext_resource type="PackedScene" uid="uid://cttrm7okfclgv" path="res://scenes/chair.tscn" id="1_lnu2h"]
 [ext_resource type="Texture2D" uid="uid://clnguthydyr1q" path="res://assets/images/mask/mask.png" id="4_m0gyy"]
-[ext_resource type="Texture2D" uid="uid://b3wqh15vmrlkf" path="res://assets/images/background.png" id="4_p4uuy"]
 [ext_resource type="Texture2D" uid="uid://d0wm11i53dyh5" path="res://assets/images/human_no_blood.png" id="5_n53qy"]
 [ext_resource type="Script" uid="uid://bhamj43r5exhw" path="res://scenes/endscene.gd" id="5_p4uuy"]
 [ext_resource type="Texture2D" uid="uid://b3wqh15vmrlkf" path="res://assets/images/background.png" id="6_p4uuy"]
@@ -108,12 +107,6 @@ script = null
 
 [node name="mutantCell" type="Node2D" parent="." unique_id=1482415348]
 
-[node name="Human" type="Sprite2D" parent="." unique_id=1499641457]
-modulate = Color(1, 1, 1, 0)
-position = Vector2(300, 458.00003)
-scale = Vector2(1.3186058, 1.2715127)
-texture = ExtResource("5_n53qy")
-
 [node name="GUI" type="CanvasLayer" parent="." unique_id=1506688441]
 
 [node name="Label" type="Label" parent="GUI" unique_id=850659862]
@@ -130,7 +123,6 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "epplekake"
 
-[node name="Player" parent="." unique_id=30301401 instance=ExtResource("4_lbhrr")]
 [node name="Human" type="Sprite2D" parent="." unique_id=1499641457]
 modulate = Color(1, 1, 1, 0)
 position = Vector2(300, 458.00003)
