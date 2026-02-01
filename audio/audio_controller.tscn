@@ -11,6 +11,7 @@
 [ext_resource type="AudioStream" uid="uid://c0fu4wg2aop3w" path="res://audio/assets/SFX/Mutant/Hit/MutantHit_1.wav" id="6_h7rxg"]
 [ext_resource type="AudioStream" uid="uid://dk13m3tdtl1xr" path="res://audio/assets/SFX/Mutant/Hit/MutantHit_2.wav" id="7_y6d7d"]
 [ext_resource type="AudioStream" uid="uid://cvn81t2mci2mx" path="res://audio/assets/SFX/Mutant/Hit/MutantHit_3.wav" id="8_2fxmg"]
+[ext_resource type="AudioStream" uid="uid://m0u5bd4flmee" path="res://audio/assets/Ambience_Cutscene.wav" id="9_fm4is"]
 [ext_resource type="AudioStream" uid="uid://bbgoban5uqj8c" path="res://audio/assets/SFX/Shoot/AirBurst/ShootAirBurst1.wav" id="9_k4r0t"]
 [ext_resource type="AudioStream" uid="uid://cbk38vld7oeke" path="res://audio/assets/SFX/Mutant/Voice/MutantHitVoice_1.wav" id="9_lqbp3"]
 [ext_resource type="AudioStream" uid="uid://o17mnemfwmy6" path="res://audio/assets/SFX/Shoot/AirBurst/ShootAirBurst2.wav" id="10_oo07s"]
@@ -37,7 +38,7 @@ sound_effects = Array[ExtResource("4_aqy48")]([SubResource("Resource_jjqtx")])
 metadata/_custom_type_script = "uid://mhixfc2qstjx"
 
 [sub_resource type="AudioStreamInteractive" id="AudioStreamInteractive_6fhfa"]
-clip_count = 3
+clip_count = 4
 clip_0/name = &"Ambience"
 clip_0/stream = ExtResource("2_cedxo")
 clip_0/auto_advance = 0
@@ -47,7 +48,16 @@ clip_1/auto_advance = 0
 clip_2/name = &"Ambience Transition"
 clip_2/stream = ExtResource("4_6fhfa")
 clip_2/auto_advance = 0
+clip_3/name = &"Ambience Cutscene"
+clip_3/stream = ExtResource("9_fm4is")
+clip_3/auto_advance = 0
 _transitions = {
+Vector2i(-1, 3): {
+"fade_beats": 2.0,
+"fade_mode": 3,
+"from_time": 0,
+"to_time": 0
+},
 Vector2i(0, 1): {
 "fade_beats": 16.0,
 "fade_mode": 3,

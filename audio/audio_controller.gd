@@ -26,6 +26,10 @@ func _playAtmosphere():
 func _changeAtmosphere():
 	var AtmosPlayback: AudioStreamPlaybackInteractive = $Atmos.get_stream_playback()
 	AtmosPlayback.switch_to_clip(1)
+	
+func _ChangeAtmosphereToEnd():
+	var AtmosPlayback: AudioStreamPlaybackInteractive = $Atmos.get_stream_playback()
+	AtmosPlayback.switch_to_clip(3)
 
 func _mutantHitSounds():
 	$MutantHit.play()
@@ -37,6 +41,8 @@ func _sidechain():
 	
 func _ready():
 	print(audio_stream_player_2d)
+	
+	GameState.end_game.connect(_ChangeAtmosphereToEnd)
 	#Shoot Gun
 	if not mute:
 		GameState.gun_clicked.connect(_shootDebug)
