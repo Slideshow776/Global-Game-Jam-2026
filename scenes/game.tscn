@@ -7,6 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://2xdpdcahrkmt" path="res://assets/images/fps_mask.png" id="5_p57ef"]
 [ext_resource type="Script" uid="uid://dxllw3yl0v247" path="res://scenes/ex_ray.gd" id="6_gee14"]
 [ext_resource type="Texture2D" uid="uid://brl4h2mjrqxry" path="res://assets/images/mutant.png" id="6_u5sy4"]
+[ext_resource type="Script" uid="uid://bxes7glgjtsqp" path="res://scenes/scene_handler.gd" id="4_iywne"]
+[ext_resource type="PackedScene" uid="uid://dlmao0kysnkd" path="res://scenes/arm.tscn" id="4_lbhrr"]
+[ext_resource type="Script" uid="uid://dq6x4r5jjy4kp" path="res://scenes/health_bar.gd" id="5_iywne"]
 
 [node name="Game" type="Node2D" unique_id=1847825036]
 script = ExtResource("1_lbhrr")
@@ -64,3 +67,18 @@ clip_children = 2
 position = Vector2(870, 461)
 scale = Vector2(1.208, 1.208)
 texture = ExtResource("6_u5sy4")
+[node name="SceneHandler" type="Node2D" parent="." unique_id=368644432]
+script = ExtResource("4_iywne")
+
+[node name="HealthBar" type="ProgressBar" parent="." unique_id=1661078210]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = 1116.0
+offset_top = 15.0
+offset_right = 1120.0
+offset_bottom = 42.0
+grow_horizontal = 0
+max_value = 500.0
+step = 100.0
+script = ExtResource("5_iywne")
