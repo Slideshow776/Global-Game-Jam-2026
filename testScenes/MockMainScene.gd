@@ -2,7 +2,7 @@ extends Node2D
 
 
 @onready var mutant_array: Array[PackedScene] = [
-	preload("res://scenes/mutant.tscn")
+	preload("res://testScenes/mockMutant.tscn")
 ]
 @onready var mutantCell: Node2D = $mutantCell
 # Called when the node enters the scene tree for the first time.

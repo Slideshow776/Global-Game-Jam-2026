@@ -1,5 +1,5 @@
 extends Node2D
-class_name brain_node
+class_name brainnode
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

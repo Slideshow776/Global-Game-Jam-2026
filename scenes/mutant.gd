@@ -7,6 +7,7 @@ signal mutantDead
 
 @onready var back_buffer_copy: BackBufferCopy = %BackBufferCopy
 @onready var sprite_2d: Sprite2D = %Sprite2D
+@onready var timer: Timer = $Timer
 
 @onready var hole: PackedScene = preload("res://scenes/hole_mask.tscn")
 
@@ -14,15 +15,18 @@ signal mutantDead
 func _ready() -> void:
 	var mutantColor: Color = Color(randf_range(0.1, 1.0), randf_range(0.1, 1.0), randf_range(0.1, 1.0), 1)
 	sprite_2d.modulate = mutantColor
-	
+	add_to_group("mutant")
 	position = GameState.mutant_chair_anchor
 	originalyposition = position.y
 	position.y = -1000 
 	print_debug("mutant says skjera tjommi")
 	GameState.mutant_died.connect(on_death)	
+	timer.timeout.connect(_on_timer_timeout)
 	
 	# REMOVE ME!!
 	GameState.gun_clicked.connect(mock_function)
+	
+	spawn_brain()
 	
 func _on_timer_timeout() -> void:
 	var tween := create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_BOUNCE)
@@ -39,7 +43,7 @@ func mock_function():
 	temp.rotation_degrees = randf_range(0, 360)
 	temp.scale = Vector2.ONE * randf_range(0.1, 0.15)
 	temp.global_position = get_global_mouse_position()
-	#GameState.mutant_died.emit()
+	GameState.mutant_died.emit()
 	
 	
 func on_death():
@@ -57,3 +61,15 @@ func on_death():
 	GameState.mutant_spawn.emit()
 	queue_free()
 	
+
+var brain_scene = preload("res://scenes/brain.tscn")
+	
+func spawn_brain():
+	var brain_spots: Array = get_tree().get_nodes_in_group("brains")
+	var rng = RandomNumberGenerator.new()
+	
+	var randomNumber = rng.randi_range(0, brain_spots.size() - 1)
+	var new_brain = brain_scene.instantiate()
+	
+	# 3. Add to the scene tree
+	brain_spots[randomNumber].add_child(new_brain)

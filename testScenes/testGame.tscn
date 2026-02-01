@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://x2fdi14lbvxb"]
+
+[ext_resource type="Script" uid="uid://bj7vp7h85ww2t" path="res://testScenes/MockMainScene.gd" id="1_ki32e"]
+[ext_resource type="PackedScene" uid="uid://cttrm7okfclgv" path="res://scenes/chair.tscn" id="2_qgp6h"]
+[ext_resource type="PackedScene" uid="uid://ds13ibiwg3k76" path="res://testScenes/mockMutant.tscn" id="3_ki32e"]
+[ext_resource type="PackedScene" uid="uid://dxmtkhopsdhde" path="res://testScenes/armMock.tscn" id="4_ki32e"]
+
+[node name="mockGame" type="Node2D" unique_id=1847825036]
+script = ExtResource("1_ki32e")
+
+[node name="Chair" parent="." unique_id=1717929055 instance=ExtResource("2_qgp6h")]
+position = Vector2(-34.000004, -212)
+scale = Vector2(1.3324018, 1.2555372)
+
+[node name="mutantCell" type="Node2D" parent="." unique_id=1482415348]
+
+[node name="MockMutant" parent="mutantCell" unique_id=1321833085 instance=ExtResource("3_ki32e")]
+
+[node name="GUI" type="CanvasLayer" parent="." unique_id=1506688441]
+
+[node name="Label" type="Label" parent="GUI" unique_id=850659862]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -11.5
+offset_right = 40.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "epplekake"
+
+[node name="mockPlayer" parent="." unique_id=30301401 instance=ExtResource("4_ki32e")]

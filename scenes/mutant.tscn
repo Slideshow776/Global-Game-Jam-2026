@@ -3,12 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://brl4h2mjrqxry" path="res://assets/images/mutant.png" id="1_smdei"]
 [ext_resource type="Script" uid="uid://bljmgiu6snykd" path="res://scenes/mutant.gd" id="2_3umk4"]
 [ext_resource type="Script" path="res://scenes/bodypart.gd" id="3_3umk4"]
-[ext_resource type="Script" path="res://scenes/brain.gd" id="4_pqu0h"]
-[ext_resource type="Texture2D" uid="uid://h56fbjnybk6d" path="res://assets/images/brain.png" id="5_4yu1w"]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pqu0h"]
-radius = 50.0
-height = 100.0
+[ext_resource type="Script" uid="uid://csvlbymq7bxi7" path="res://scenes/brainnode.gd" id="6_4yu1w"]
 
 [node name="Mutant" type="Node2D" unique_id=1321833085]
 script = ExtResource("2_3umk4")
@@ -31,21 +26,34 @@ position = Vector2(24, -19)
 scale = Vector2(1.2084079, 1.2084079)
 texture = ExtResource("1_smdei")
 
-[node name="Timer" type="Timer" parent="." unique_id=1504607112]
+[node name="Timer" type="Timer" parent="." unique_id=224507714]
 one_shot = true
 autostart = true
 
-[node name="Brain" type="Area2D" parent="." unique_id=1436471873]
-script = ExtResource("4_pqu0h")
+[node name="Node2D" type="Node2D" parent="." unique_id=640925784]
+position = Vector2(95, -195)
+script = ExtResource("6_4yu1w")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Brain" unique_id=280813912]
-position = Vector2(56, 72)
-shape = SubResource("CapsuleShape2D_pqu0h")
+[node name="Node2D2" type="Node2D" parent="." unique_id=2022607403]
+position = Vector2(-20, 27)
+script = ExtResource("6_4yu1w")
 
-[node name="BrainSprite" type="Sprite2D" parent="Brain" unique_id=1921952348]
-visible = false
-position = Vector2(54, 70)
-texture = ExtResource("5_4yu1w")
+[node name="Node2D3" type="Node2D" parent="." unique_id=813282293]
+position = Vector2(-31, -243)
+script = ExtResource("6_4yu1w")
 
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
-[connection signal="input_event" from="Brain" to="Brain" method="_on_input_event"]
+[node name="Node2D4" type="Node2D" parent="." unique_id=528763233]
+position = Vector2(-72, -326)
+script = ExtResource("6_4yu1w")
+
+[node name="Node2D5" type="Node2D" parent="." unique_id=774684772]
+position = Vector2(43, 89)
+script = ExtResource("6_4yu1w")
+
+[node name="Node2D6" type="Node2D" parent="." unique_id=696110179]
+position = Vector2(-62, 240)
+script = ExtResource("6_4yu1w")
+
+[node name="Node2D7" type="Node2D" parent="." unique_id=305549562]
+position = Vector2(-191, 46)
+script = ExtResource("6_4yu1w")
