@@ -8,7 +8,7 @@ extends Node2D
 @export var health = 500
 
 #Cannot be shorten than 0.6
-@onready var timer: Timer = %Timer
+#	@onready var timer: Timer = %Timer
 
 func _ready() -> void:
 	GameState.mutant_hit.connect(tank_hit)
