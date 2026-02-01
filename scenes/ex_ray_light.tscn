@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://exm84006qde3"]
+
+[ext_resource type="Texture2D" uid="uid://bpnoecou4k01f" path="res://assets/images/white_circle.png" id="1_gvlri"]
+
+[node name="exRayLight" type="PointLight2D" unique_id=625863905]
+energy = 5.19
+texture = ExtResource("1_gvlri")

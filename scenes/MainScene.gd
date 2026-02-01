@@ -12,7 +12,6 @@ func _ready() -> void:
 	var tempMutant = mutant.instantiate()
 	mutantCell.add_child(tempMutant)
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass

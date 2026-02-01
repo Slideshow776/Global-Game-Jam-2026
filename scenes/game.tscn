@@ -2,6 +2,11 @@
 
 [ext_resource type="Script" uid="uid://c4uhaqdf1hx87" path="res://scenes/MainScene.gd" id="1_lbhrr"]
 [ext_resource type="PackedScene" uid="uid://cttrm7okfclgv" path="res://scenes/chair.tscn" id="1_lnu2h"]
+[ext_resource type="Texture2D" uid="uid://b3wqh15vmrlkf" path="res://assets/images/background.png" id="4_iywne"]
+[ext_resource type="PackedScene" uid="uid://dlmao0kysnkd" path="res://scenes/arm.tscn" id="4_lbhrr"]
+[ext_resource type="Texture2D" uid="uid://2xdpdcahrkmt" path="res://assets/images/fps_mask.png" id="5_p57ef"]
+[ext_resource type="Script" uid="uid://dxllw3yl0v247" path="res://scenes/ex_ray.gd" id="6_gee14"]
+[ext_resource type="Texture2D" uid="uid://brl4h2mjrqxry" path="res://assets/images/mutant.png" id="6_u5sy4"]
 [ext_resource type="Script" uid="uid://bxes7glgjtsqp" path="res://scenes/scene_handler.gd" id="4_iywne"]
 [ext_resource type="PackedScene" uid="uid://dlmao0kysnkd" path="res://scenes/arm.tscn" id="4_lbhrr"]
 [ext_resource type="Script" uid="uid://dq6x4r5jjy4kp" path="res://scenes/health_bar.gd" id="5_iywne"]
@@ -33,6 +38,35 @@ text = "epplekake"
 
 [node name="Player" parent="." unique_id=30301401 instance=ExtResource("4_lbhrr")]
 
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1091462190]
+z_index = -1
+offset_right = 1153.0
+offset_bottom = 860.0
+texture = ExtResource("4_iywne")
+
+[node name="TextureRect" type="TextureRect" parent="TextureRect" unique_id=1810919262]
+z_index = 10
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("5_p57ef")
+
+[node name="ExRay" type="ColorRect" parent="TextureRect/TextureRect" unique_id=513010455]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.11372549, 0.11372549, 0.11372549, 0.34509805)
+script = ExtResource("6_gee14")
+
+[node name="Sprite2D" type="Sprite2D" parent="TextureRect/TextureRect/ExRay" unique_id=799186716]
+modulate = Color(0.11119679, 0.11119687, 0.11119684, 0.8901961)
+clip_children = 2
+position = Vector2(870, 461)
+scale = Vector2(1.208, 1.208)
+texture = ExtResource("6_u5sy4")
 [node name="SceneHandler" type="Node2D" parent="." unique_id=368644432]
 script = ExtResource("4_iywne")
 
