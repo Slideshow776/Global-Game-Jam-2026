@@ -40,6 +40,7 @@ func hello_world():
 	print_debug("Hello world")
 	
 func update_health(health):
+	print(current_health)
 	current_health += health
 	if current_health <= 0:
 		end_game.emit()
