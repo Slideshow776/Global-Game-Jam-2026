@@ -11,7 +11,7 @@ height = 100.0
 script = ExtResource("1_5sr82")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1170655159]
-position = Vector2(56, 72)
+position = Vector2(5, 4)
 shape = SubResource("CapsuleShape2D_pqu0h")
 
 [node name="BrainSprite" type="Sprite2D" parent="." unique_id=1071054966]
