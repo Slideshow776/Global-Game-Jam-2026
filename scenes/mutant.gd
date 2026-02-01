@@ -42,6 +42,7 @@ func _on_timer_timeout() -> void:
 #		GameState.mutant_hit.emit()
 		
 func mock_function():
+	await get_tree().create_timer(0.2).timeout
 	var temp: Sprite2D = hole.instantiate()
 	back_buffer_copy.add_child(temp)
 	temp.rotation_degrees = randf_range(0, 360)

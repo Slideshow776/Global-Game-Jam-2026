@@ -15,9 +15,14 @@ run/main_scene="res://scenes/game.tscn"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://assets/images/icon.svg"
 
+[audio]
+
+buses/default_bus_layout="uid://n7n2c6dkjf7t"
+
 [autoload]
 
 GameState="*uid://q4xdlkx4w7yw"
+AudioController="*uid://b8qn0yb3gdu0d"
 
 [display]
 
@@ -28,6 +33,10 @@ window/stretch/aspect="expand"
 [dotnet]
 
 project/assembly_name="GGJ2026OSLO"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/godot-vim/plugin.cfg")
 
 [physics]
 
