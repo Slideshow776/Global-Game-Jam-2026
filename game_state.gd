@@ -9,10 +9,13 @@ signal mutant_died
 signal brain_remove
 signal mutant_sprite_updated
 
+signal update_score
+
 signal toggle_exray(state: bool)
 
 var exray_enabled = false
 var mutant_sprite
+var score = 0
 signal change_health(health)
 signal end_game
 
@@ -24,7 +27,7 @@ var current_health = 500
 func _ready() -> void:
 	gun_clicked.connect(gun_play_sound)
 	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
-	brain_hit.connect(hello_world)
+	brain_hit.connect(inc_score)
 	toggle_exray.emit(false)
 	change_health.connect(update_health)
 	toggle_exray.connect(flip_exray)
@@ -43,8 +46,10 @@ func gun_play_sound():
 	#print_debug("Pang :-")
 	pass
 
-func hello_world():
-	print_debug("Hello world")
+func inc_score():
+	score += 1
+	update_score.emit()
+	
 	
 func update_health(health):
 	print(current_health)

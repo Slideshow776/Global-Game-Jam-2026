@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://brl4h2mjrqxry" path="res://assets/images/mutant.png" id="1_smdei"]
 [ext_resource type="Script" uid="uid://bljmgiu6snykd" path="res://scenes/mutant.gd" id="2_3umk4"]
 [ext_resource type="Script" uid="uid://ctwnj4j8cml8m" path="res://scenes/bodypart.gd" id="3_3umk4"]
+[ext_resource type="Script" path="res://scenes/brainnode.gd" id="6_4yu1w"]
 [ext_resource type="Script" uid="uid://csvlbymq7bxi7" path="res://scenes/brainnode.gd" id="6_4yu1w"]
 
 [node name="Mutant" type="Node2D" unique_id=1321833085]
@@ -31,7 +32,7 @@ one_shot = true
 autostart = true
 
 [node name="Node2D" type="Node2D" parent="." unique_id=640925784]
-position = Vector2(95, -195)
+position = Vector2(108, -266)
 script = ExtResource("6_4yu1w")
 
 [node name="Node2D2" type="Node2D" parent="." unique_id=2022607403]
@@ -39,7 +40,7 @@ position = Vector2(-20, 27)
 script = ExtResource("6_4yu1w")
 
 [node name="Node2D3" type="Node2D" parent="." unique_id=813282293]
-position = Vector2(-31, -243)
+position = Vector2(85, -136)
 script = ExtResource("6_4yu1w")
 
 [node name="Node2D4" type="Node2D" parent="." unique_id=528763233]

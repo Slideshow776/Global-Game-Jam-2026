@@ -17,6 +17,8 @@ func _ready() -> void:
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton && event.button_index == MOUSE_BUTTON_LEFT && event.pressed:
 		if event.button_index == MOUSE_BUTTON_LEFT and timer.is_stopped():
+			if(GameState.exray_enabled):
+				return
 			GameState.gun_clicked.emit()
 			timer.start()
 			var tween = create_tween()
