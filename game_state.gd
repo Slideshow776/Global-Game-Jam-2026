@@ -23,10 +23,10 @@ func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
 	brain_hit.connect(hello_world)
 	toggle_exray.emit(false)
+	change_health.connect(update_health)
 
 func flip_exray(state: bool):
 	exray_enabled = state
-	change_health.connect(update_health)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
