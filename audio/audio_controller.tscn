@@ -26,6 +26,8 @@
 [ext_resource type="AudioStream" uid="uid://bwenbpvhyhb0t" path="res://audio/assets/SFX/Mutant/Drop/MutantDrop3.wav" id="24_i2ya0"]
 [ext_resource type="AudioStream" uid="uid://c2w7vb6vncpoo" path="res://audio/assets/SFX/Mutant/Drop/MutantDrop4.wav" id="25_468gl"]
 [ext_resource type="AudioStream" uid="uid://d28wg4lvkbxon" path="res://audio/assets/SFX/Mutant/Drop/MutantDrop5.wav" id="26_na7hd"]
+[ext_resource type="AudioStream" uid="uid://dj5lnsnitpdei" path="res://audio/assets/SFX/xray/Xray_1.wav" id="27_i2ya0"]
+[ext_resource type="AudioStream" uid="uid://dll0kamj4osgt" path="res://audio/assets/SFX/xray/Xray_2.wav" id="28_468gl"]
 
 [sub_resource type="Curve" id="Curve_h7rxg"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -131,6 +133,12 @@ stream_2/stream = ExtResource("24_i2ya0")
 stream_3/stream = ExtResource("25_468gl")
 stream_4/stream = ExtResource("26_na7hd")
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_na7hd"]
+playback_mode = 2
+streams_count = 2
+stream_0/stream = ExtResource("27_i2ya0")
+stream_1/stream = ExtResource("28_468gl")
+
 [node name="AudioController" type="Node2D" unique_id=1321118255]
 script = ExtResource("1_5dt40")
 low_volume = 0.2
@@ -167,3 +175,7 @@ bus = &"Shoot"
 [node name="MutantDrop" type="AudioStreamPlayer" parent="." unique_id=1308018107]
 stream = SubResource("AudioStreamRandomizer_llkha")
 bus = &"Mutant SFX"
+
+[node name="Xray" type="AudioStreamPlayer" parent="." unique_id=1488382115]
+stream = SubResource("AudioStreamRandomizer_na7hd")
+bus = &"UI"
