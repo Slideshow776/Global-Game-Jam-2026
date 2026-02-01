@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://bujukjiy5hn8r"]
+
+[ext_resource type="Script" uid="uid://bc2dm4y5ci4ww" path="res://audio/polyphonic_audio_player.gd" id="1_6s7xm"]
+
+[node name="PolyphonicAudioPlayer" type="Node2D" unique_id=1985061314]
+script = ExtResource("1_6s7xm")
+custom_max_polyphony = null

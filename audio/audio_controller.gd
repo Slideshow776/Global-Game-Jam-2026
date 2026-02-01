@@ -12,6 +12,9 @@ extends Node2D
 var volume_time: float = 1.0
 var is_falling: bool = false
 
+func _shootDebug():
+	$Shoot.play()
+	print("Shoot Play")
 
 func _playAtmosphere():
 	$Atmos.play()
@@ -32,7 +35,7 @@ func _ready():
 	
 	#Shoot Gun
 	if not mute:
-		GameState.gun_clicked.connect($Shoot.play)
+		GameState.gun_clicked.connect(_shootDebug)
 		GameState.gun_clicked.connect(_sidechain)
 	
 	#Mutant Hit
