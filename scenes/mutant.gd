@@ -22,7 +22,7 @@ func _ready() -> void:
 	GameState.mutant_died.connect(on_death)	
 	
 	# REMOVE ME!!
-	GameState.gun_clicked.connect(mock_function)
+	GameState.mutant_hit.connect(mock_function)
 	
 func _on_timer_timeout() -> void:
 	var tween := create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_BOUNCE)
@@ -34,12 +34,13 @@ func _on_timer_timeout() -> void:
 #		GameState.mutant_hit.emit()
 		
 func mock_function():
+	await get_tree().create_timer(0.2).timeout
 	var temp: Sprite2D = hole.instantiate()
 	back_buffer_copy.add_child(temp)
 	temp.rotation_degrees = randf_range(0, 360)
 	temp.scale = Vector2.ONE * randf_range(0.1, 0.15)
 	temp.global_position = get_global_mouse_position()
-	#GameState.mutant_died.emit()
+	GameState.mutant_died.emit()
 	
 	
 func on_death():

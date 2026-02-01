@@ -4,4 +4,3 @@
 
 [node name="PolyphonicAudioPlayer" type="Node2D" unique_id=1985061314]
 script = ExtResource("1_6s7xm")
-custom_max_polyphony = null

@@ -7,13 +7,17 @@ extends Node2D
 @export var duration_out: float = 0.5
 @export var volume_curve: Curve
 
+#@export var polyphonic_audio_player: AudioStreamPlayer2D = $AudioStreamPlayer2D
+@onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 
 var volume_time: float = 1.0
 var is_falling: bool = false
 
 func _shootDebug():
+	#audio_stream_player_2d.play_sound_effect_from_library("Shoot2")
 	$Shoot.play()
+	$ShootImpack.play()
 	print("Shoot Play")
 
 func _playAtmosphere():
@@ -25,14 +29,14 @@ func _changeAtmosphere():
 
 func _mutantHitSounds():
 	$MutantHit.play()
-	$Shoot.play()
+	#$Shoot.play()
 	_changeAtmosphere()
 	
 func _sidechain():
 	is_falling = true
 	
 func _ready():
-	
+	print(audio_stream_player_2d)
 	#Shoot Gun
 	if not mute:
 		GameState.gun_clicked.connect(_shootDebug)

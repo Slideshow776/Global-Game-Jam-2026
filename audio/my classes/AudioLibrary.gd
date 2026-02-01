@@ -7,7 +7,7 @@ class_name AudioLibrary
 
 
 func get_audio_stream(_tag: String):
-	var index= -1
+	var index = -1
 	if _tag:
 		for sound in sound_effects:
 			index += 1
