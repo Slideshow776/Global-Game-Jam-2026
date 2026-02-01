@@ -4,7 +4,10 @@ extends Node2D
 @onready var gun_pos = $gun/gunpoint
 @onready var gun = $gun
 
+#@export var max_health = 1000
+
 func _ready() -> void:
+	#var health = max_health
 	pass
 
 func _input(event: InputEvent) -> void:
