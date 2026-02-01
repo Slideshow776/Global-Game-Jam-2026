@@ -6,12 +6,13 @@ extends Node2D
 ]
 
 @onready var mutantCell: Node2D = $mutantCell
-@onready var mutant: PackedScene = preload("res://scenes/mutant.tscn")
+@onready var mutant: PackedScene = preload("res://scenes/mutant2.tscn")
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	GameState.mutant_spawn.connect(create_mutant)
-	var tempMutant = mutant.instantiate()
-	mutantCell.add_child(tempMutant)
+	#var tempMutant = mutant.instantiate()
+	#mutantCell.add_child(tempMutant)
+	create_mutant()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

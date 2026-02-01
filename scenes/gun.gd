@@ -19,6 +19,9 @@ func _input(event: InputEvent) -> void:
 		if event.button_index == MOUSE_BUTTON_LEFT and timer.is_stopped():
 			GameState.gun_clicked.emit()
 			timer.start()
+			var tween = create_tween()
+			tween.tween_property(self, "modulate:r", 255.0, 0.0)
+			tween.tween_property(self, "modulate:r", 1.0, timer.wait_time)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
