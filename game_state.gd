@@ -6,10 +6,12 @@ signal mutant_spawn
 signal mutant_died
 
 signal brain_remove
+signal mutant_sprite_updated
 
 signal toggle_exray(state: bool)
 
 var exray_enabled = false
+var mutant_sprite
 signal change_health(health)
 signal end_game
 
@@ -24,13 +26,17 @@ func _ready() -> void:
 	brain_hit.connect(hello_world)
 	toggle_exray.emit(false)
 	change_health.connect(update_health)
-
-func flip_exray(state: bool):
-	exray_enabled = state
+	toggle_exray.connect(flip_exray)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
+
+func flip_exray():
+	if exray_enabled:
+		exray_enabled = false
+	else:
+		exray_enabled = true
 
 func gun_play_sound():
 	#print_debug("Pang :-")
@@ -43,3 +49,8 @@ func update_health(health):
 	current_health += health
 	if current_health <= 0:
 		end_game.emit()
+
+func _input(event: InputEvent) -> void:
+	if event is InputEventMouseButton:
+		if event.button_index == MOUSE_BUTTON_RIGHT && event.pressed:
+			toggle_exray.emit()
