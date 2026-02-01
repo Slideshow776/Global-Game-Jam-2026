@@ -8,7 +8,6 @@
 [ext_resource type="Script" uid="uid://bxes7glgjtsqp" path="res://scenes/scene_handler.gd" id="4_iywne"]
 [ext_resource type="PackedScene" uid="uid://dlmao0kysnkd" path="res://scenes/arm.tscn" id="4_lbhrr"]
 [ext_resource type="Texture2D" uid="uid://clnguthydyr1q" path="res://assets/images/mask/mask.png" id="5_0tnpc"]
-[ext_resource type="Script" uid="uid://dq6x4r5jjy4kp" path="res://scenes/health_bar.gd" id="5_iywne"]
 [ext_resource type="Script" uid="uid://dxllw3yl0v247" path="res://scenes/ex_ray.gd" id="6_gee14"]
 [ext_resource type="Texture2D" uid="uid://brl4h2mjrqxry" path="res://assets/images/mutant.png" id="6_u5sy4"]
 [ext_resource type="Script" path="res://scenes/mutant_exray_sprite.gd" id="8_vtaks"]
@@ -40,31 +39,16 @@ grow_vertical = 2
 text = "epplekake"
 
 [node name="ScoreLabel" type="RichTextLabel" parent="GUI" unique_id=2052864420]
-offset_left = 469.0
-offset_top = 54.0
-offset_right = 909.0
-offset_bottom = 94.0
+offset_left = 552.0
+offset_top = 56.0
+offset_right = 672.0
+offset_bottom = 96.0
 theme_override_fonts/normal_font = ExtResource("3_dinhu")
 bbcode_enabled = true
 text = "Score:"
 scroll_active = false
+horizontal_alignment = 1
 script = ExtResource("3_kvpfn")
-
-[node name="HealthBar" type="ProgressBar" parent="GUI" unique_id=1661078210]
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -983.0
-offset_top = 63.0
-offset_right = -979.0
-offset_bottom = 112.0
-grow_horizontal = 0
-size_flags_horizontal = 4
-theme_override_fonts/font = ExtResource("3_dinhu")
-theme_override_font_sizes/font_size = 32
-max_value = 500.0
-step = 100.0
-script = ExtResource("5_iywne")
 
 [node name="Player" parent="." unique_id=30301401 instance=ExtResource("4_lbhrr")]
 

@@ -2,9 +2,17 @@
 
 [ext_resource type="Script" uid="uid://ccbahu0jwxr27" path="res://scenes/gun.gd" id="2_dy6di"]
 [ext_resource type="Texture2D" uid="uid://bccq7gss6wl6p" path="res://assets/images/arm.png" id="2_muf2m"]
+[ext_resource type="FontFile" uid="uid://c8ty35bqkku52" path="res://assets/fonts/Creepster-Regular.ttf" id="3_3j5xu"]
+[ext_resource type="Script" uid="uid://dq6x4r5jjy4kp" path="res://scenes/health_bar.gd" id="4_k0nq1"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_muf2m"]
 radius = 19.026299
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3j5xu"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k0nq1"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [node name="Player" type="Node2D" unique_id=30301401]
 script = ExtResource("2_dy6di")
@@ -19,6 +27,27 @@ shape = SubResource("CircleShape2D_muf2m")
 position = Vector2(21, 159)
 scale = Vector2(0.8281853, 0.75549453)
 texture = ExtResource("2_muf2m")
+
+[node name="HealthBar" type="ProgressBar" parent="gun" unique_id=1213895745]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = 20.000008
+offset_top = 224.0
+offset_right = 66.00001
+offset_bottom = 273.0
+grow_horizontal = 0
+rotation = -0.6326557
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_3j5xu")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/background = SubResource("StyleBoxFlat_3j5xu")
+theme_override_styles/fill = SubResource("StyleBoxFlat_k0nq1")
+max_value = 500.0
+step = 100.0
+script = ExtResource("4_k0nq1")
 
 [node name="Timer" type="Timer" parent="." unique_id=968776271]
 one_shot = true
