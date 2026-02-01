@@ -7,6 +7,12 @@
 [ext_resource type="Script" uid="uid://dq6x4r5jjy4kp" path="res://scenes/health_bar.gd" id="5_iywne"]
 [ext_resource type="Texture2D" uid="uid://2xdpdcahrkmt" path="res://assets/images/fps_mask.png" id="5_p57ef"]
 [ext_resource type="Script" path="res://scenes/ex_ray.gd" id="6_gee14"]
+[ext_resource type="Texture2D" uid="uid://b3wqh15vmrlkf" path="res://assets/images/background.png" id="4_0tnpc"]
+[ext_resource type="Script" path="res://scenes/scene_handler.gd" id="4_iywne"]
+[ext_resource type="PackedScene" uid="uid://dlmao0kysnkd" path="res://scenes/arm.tscn" id="4_lbhrr"]
+[ext_resource type="Script" path="res://scenes/health_bar.gd" id="5_iywne"]
+[ext_resource type="Texture2D" uid="uid://2xdpdcahrkmt" path="res://assets/images/fps_mask.png" id="5_p57ef"]
+[ext_resource type="Script" uid="uid://dxllw3yl0v247" path="res://scenes/ex_ray.gd" id="6_gee14"]
 [ext_resource type="Texture2D" uid="uid://brl4h2mjrqxry" path="res://assets/images/mutant.png" id="6_u5sy4"]
 
 [node name="Game" type="Node2D" unique_id=1847825036]
@@ -40,6 +46,7 @@ text = "epplekake"
 z_index = -1
 offset_right = 1153.0
 offset_bottom = 860.0
+texture = ExtResource("4_0tnpc")
 
 [node name="TextureRect" type="TextureRect" parent="TextureRect" unique_id=1810919262]
 z_index = 10
