@@ -13,7 +13,6 @@ extends Node2D
 func _ready() -> void:
 	GameState.mutant_hit.connect(tank_hit)
 	GameState.brain_hit.connect(brain_hit)
-	GameState.toggle_exray.connect(GameState.flip_exray)
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton && event.button_index == MOUSE_BUTTON_LEFT && event.pressed:
