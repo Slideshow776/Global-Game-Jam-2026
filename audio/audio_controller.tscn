@@ -21,6 +21,11 @@
 [ext_resource type="AudioStream" uid="uid://0dreutys4fe3" path="res://audio/assets/SFX/Mutant/Voice/MutantHitVoice_4.wav" id="12_1rgna"]
 [ext_resource type="AudioStream" uid="uid://i2qx232u7y5l" path="res://audio/assets/SFX/Shoot/Impact/ShootImpact_01.wav" id="12_oo07s"]
 [ext_resource type="AudioStream" uid="uid://byaokw8qxvact" path="res://audio/assets/SFX/Mutant/Voice/MutantHitVoice_5.wav" id="13_aqy48"]
+[ext_resource type="AudioStream" uid="uid://bsyd7uj75e35e" path="res://audio/assets/SFX/Mutant/Drop/MutantDrop1.wav" id="22_l2fsa"]
+[ext_resource type="AudioStream" uid="uid://dafkmkbnk3k7h" path="res://audio/assets/SFX/Mutant/Drop/MutantDrop2.wav" id="23_0vfry"]
+[ext_resource type="AudioStream" uid="uid://bwenbpvhyhb0t" path="res://audio/assets/SFX/Mutant/Drop/MutantDrop3.wav" id="24_i2ya0"]
+[ext_resource type="AudioStream" uid="uid://c2w7vb6vncpoo" path="res://audio/assets/SFX/Mutant/Drop/MutantDrop4.wav" id="25_468gl"]
+[ext_resource type="AudioStream" uid="uid://d28wg4lvkbxon" path="res://audio/assets/SFX/Mutant/Drop/MutantDrop5.wav" id="26_na7hd"]
 
 [sub_resource type="Curve" id="Curve_h7rxg"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -116,6 +121,16 @@ random_volume_offset_db = 0.34
 streams_count = 1
 stream_0/stream = ExtResource("12_oo07s")
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_llkha"]
+random_pitch = 1.0627115
+random_volume_offset_db = 0.75
+streams_count = 5
+stream_0/stream = ExtResource("22_l2fsa")
+stream_1/stream = ExtResource("23_0vfry")
+stream_2/stream = ExtResource("24_i2ya0")
+stream_3/stream = ExtResource("25_468gl")
+stream_4/stream = ExtResource("26_na7hd")
+
 [node name="AudioController" type="Node2D" unique_id=1321118255]
 script = ExtResource("1_5dt40")
 low_volume = 0.2
@@ -148,3 +163,6 @@ bus = &"Mutant SFX"
 [node name="ShootImpack" type="AudioStreamPlayer" parent="." unique_id=1889827259]
 stream = SubResource("AudioStreamRandomizer_22v1o")
 bus = &"Shoot"
+
+[node name="MutantDrop" type="AudioStreamPlayer" parent="." unique_id=1308018107]
+stream = SubResource("AudioStreamRandomizer_llkha")

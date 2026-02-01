@@ -35,6 +35,8 @@ func _mutantHitSounds():
 	$MutantHit.play()
 	#$Shoot.play()
 	_changeAtmosphere()
+func _mutantSpawn():
+	$MutantDrop.play()
 	
 func _sidechain():
 	is_falling = true
@@ -52,6 +54,9 @@ func _ready():
 	if not mute:
 		GameState.mutant_hit.connect(_mutantHitSounds)
 		GameState.mutant_died.connect($MutantDead.play)
+	
+	if not mute:
+		GameState.mutant_landed.connect(_mutantSpawn)
 	
 	#Play atmos at start of the game
 	if not mute:
