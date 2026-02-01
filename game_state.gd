@@ -18,6 +18,7 @@ var mutant_sprite
 var score = 0
 signal change_health(health)
 signal end_game
+signal game_started
 
 var mutant_chair_anchor = Vector2(289, 501)
 

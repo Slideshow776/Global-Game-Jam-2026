@@ -2,13 +2,13 @@
 
 [ext_resource type="Script" uid="uid://b88qlvl80mtek" path="res://audio/audio_controller.gd" id="1_5dt40"]
 [ext_resource type="Script" uid="uid://bc2dm4y5ci4ww" path="res://audio/polyphonic_audio_player.gd" id="2_1rgna"]
-[ext_resource type="AudioStream" uid="uid://2nx7u17ltjhi" path="res://audio/assets/Ambience.wav" id="2_cedxo"]
 [ext_resource type="Script" uid="uid://mhixfc2qstjx" path="res://audio/my classes/AudioLibrary.gd" id="3_1rgna"]
 [ext_resource type="AudioStream" uid="uid://baucn82dj47lg" path="res://audio/assets/Ambience2.wav" id="3_cedxo"]
 [ext_resource type="AudioStream" uid="uid://eao4rilrngr0" path="res://audio/assets/Ambience_Transition.wav" id="4_6fhfa"]
 [ext_resource type="Script" uid="uid://egejl4os3ckr" path="res://audio/my classes/soundEffect.gd" id="4_aqy48"]
 [ext_resource type="AudioStream" uid="uid://chc8pilk3thn1" path="res://audio/assets/SFX/Shoot1.wav" id="5_vj1x0"]
 [ext_resource type="AudioStream" uid="uid://c0fu4wg2aop3w" path="res://audio/assets/SFX/Mutant/Hit/MutantHit_1.wav" id="6_h7rxg"]
+[ext_resource type="AudioStream" uid="uid://3bc5mjlt4hcd" path="res://audio/assets/SFX/xray/AmbienceStart.wav" id="6_i2ya0"]
 [ext_resource type="AudioStream" uid="uid://dk13m3tdtl1xr" path="res://audio/assets/SFX/Mutant/Hit/MutantHit_2.wav" id="7_y6d7d"]
 [ext_resource type="AudioStream" uid="uid://cvn81t2mci2mx" path="res://audio/assets/SFX/Mutant/Hit/MutantHit_3.wav" id="8_2fxmg"]
 [ext_resource type="AudioStream" uid="uid://m0u5bd4flmee" path="res://audio/assets/Ambience_Cutscene.wav" id="9_fm4is"]
@@ -26,6 +26,8 @@
 [ext_resource type="AudioStream" uid="uid://bwenbpvhyhb0t" path="res://audio/assets/SFX/Mutant/Drop/MutantDrop3.wav" id="24_i2ya0"]
 [ext_resource type="AudioStream" uid="uid://c2w7vb6vncpoo" path="res://audio/assets/SFX/Mutant/Drop/MutantDrop4.wav" id="25_468gl"]
 [ext_resource type="AudioStream" uid="uid://d28wg4lvkbxon" path="res://audio/assets/SFX/Mutant/Drop/MutantDrop5.wav" id="26_na7hd"]
+[ext_resource type="AudioStream" uid="uid://dj5lnsnitpdei" path="res://audio/assets/SFX/xray/Xray_1.wav" id="27_i2ya0"]
+[ext_resource type="AudioStream" uid="uid://dll0kamj4osgt" path="res://audio/assets/SFX/xray/Xray_2.wav" id="28_468gl"]
 
 [sub_resource type="Curve" id="Curve_h7rxg"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -45,8 +47,9 @@ metadata/_custom_type_script = "uid://mhixfc2qstjx"
 [sub_resource type="AudioStreamInteractive" id="AudioStreamInteractive_6fhfa"]
 clip_count = 4
 clip_0/name = &"Ambience"
-clip_0/stream = ExtResource("2_cedxo")
-clip_0/auto_advance = 0
+clip_0/stream = ExtResource("6_i2ya0")
+clip_0/auto_advance = 1
+clip_0/next_clip = 0
 clip_1/name = &"Ambience2"
 clip_1/stream = ExtResource("3_cedxo")
 clip_1/auto_advance = 0
@@ -64,16 +67,8 @@ Vector2i(-1, 3): {
 "to_time": 0
 },
 Vector2i(0, 1): {
-"fade_beats": 16.0,
+"fade_beats": 5.0,
 "fade_mode": 3,
-"filler_clip": 2,
-"from_time": 0,
-"to_time": 0,
-"use_filler_clip": true
-},
-Vector2i(0, 2): {
-"fade_beats": 16.0,
-"fade_mode": 2,
 "from_time": 0,
 "to_time": 0
 },
@@ -131,6 +126,12 @@ stream_2/stream = ExtResource("24_i2ya0")
 stream_3/stream = ExtResource("25_468gl")
 stream_4/stream = ExtResource("26_na7hd")
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_na7hd"]
+playback_mode = 2
+streams_count = 2
+stream_0/stream = ExtResource("27_i2ya0")
+stream_1/stream = ExtResource("28_468gl")
+
 [node name="AudioController" type="Node2D" unique_id=1321118255]
 script = ExtResource("1_5dt40")
 low_volume = 0.2
@@ -167,3 +168,7 @@ bus = &"Shoot"
 [node name="MutantDrop" type="AudioStreamPlayer" parent="." unique_id=1308018107]
 stream = SubResource("AudioStreamRandomizer_llkha")
 bus = &"Mutant SFX"
+
+[node name="Xray" type="AudioStreamPlayer" parent="." unique_id=1488382115]
+stream = SubResource("AudioStreamRandomizer_na7hd")
+bus = &"UI"
