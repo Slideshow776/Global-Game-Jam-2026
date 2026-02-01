@@ -31,29 +31,29 @@ one_shot = true
 autostart = true
 
 [node name="Node2D" type="Node2D" parent="." unique_id=640925784]
-position = Vector2(95, -195)
+position = Vector2(-52, -273)
 script = ExtResource("6_4yu1w")
 
 [node name="Node2D2" type="Node2D" parent="." unique_id=2022607403]
-position = Vector2(-20, 27)
+position = Vector2(14, -75)
 script = ExtResource("6_4yu1w")
 
 [node name="Node2D3" type="Node2D" parent="." unique_id=813282293]
-position = Vector2(-31, -243)
+position = Vector2(-96, -130)
 script = ExtResource("6_4yu1w")
 
 [node name="Node2D4" type="Node2D" parent="." unique_id=528763233]
-position = Vector2(-72, -326)
+position = Vector2(151, -297)
 script = ExtResource("6_4yu1w")
 
 [node name="Node2D5" type="Node2D" parent="." unique_id=774684772]
-position = Vector2(43, 89)
+position = Vector2(101, 83)
 script = ExtResource("6_4yu1w")
 
 [node name="Node2D6" type="Node2D" parent="." unique_id=696110179]
-position = Vector2(-62, 240)
+position = Vector2(-50, 93)
 script = ExtResource("6_4yu1w")
 
 [node name="Node2D7" type="Node2D" parent="." unique_id=305549562]
-position = Vector2(-191, 46)
+position = Vector2(36, 172)
 script = ExtResource("6_4yu1w")

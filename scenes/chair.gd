@@ -19,6 +19,7 @@ func _on_mutant_hit_do_splat ():
 var splatter_scene = preload("res://scenes/splatter.tscn")
 
 func spawn_splat(location: Vector2):
+	
 	print("splat spawn")
 	# 1. Instantiate the scene
 	var new_sprite = splatter_scene.instantiate()
