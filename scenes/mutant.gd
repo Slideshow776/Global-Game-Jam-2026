@@ -32,6 +32,7 @@ func _on_timer_timeout() -> void:
 	var tween := create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_BOUNCE)
 	tween.tween_property(self, "position:y", originalyposition, 0.7)
 	await tween.finished
+	GameState.mutant_landed.emit()
 	spawn_brain()
 	GameState.mutant_sprite_updated.emit()
 

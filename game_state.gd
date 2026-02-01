@@ -3,6 +3,7 @@ signal gun_clicked
 signal mutant_hit
 signal brain_hit
 signal mutant_spawn
+signal mutant_landed
 signal mutant_died
 
 signal brain_remove
