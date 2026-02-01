@@ -1,14 +1,22 @@
 extends Area2D
 
 # Called when the node enters the scene tree for the first time.
+var mouse_is_over = false
 func _ready() -> void:
+	GameState.gun_clicked.connect(check_mutant_hit)
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
 
-func _input_event(viewport: Node, event: InputEvent, shape_idx: int):
-	if event is InputEventMouseButton && event.button_index == MOUSE_BUTTON_LEFT && event.pressed:
-			print(name)
-			GameState.mutant_hit.emit()
+func _mouse_enter() -> void:
+	mouse_is_over = true
+
+func _mouse_exit() -> void:
+	mouse_is_over = false
+
+func check_mutant_hit():
+	if mouse_is_over:
+		GameState.mutant_hit.emit()
+		 
