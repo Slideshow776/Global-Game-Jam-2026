@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://dp1q0cul1ufxq"]
+
+[ext_resource type="Shader" uid="uid://dlyc6uaw74ecs" path="res://scenes/mask_shader_0.gdshader" id="1_lg7fd"]
+[ext_resource type="Texture2D" uid="uid://btlo8yq1jgxn8" path="res://assets/images/punched_hole_circle.png" id="2_lg7fd"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rtr88"]
+shader = ExtResource("1_lg7fd")
+
+[node name="mask" type="Sprite2D" unique_id=512699105]
+material = SubResource("ShaderMaterial_rtr88")
+scale = Vector2(3.7777784, 4.142857)
+texture = ExtResource("2_lg7fd")
