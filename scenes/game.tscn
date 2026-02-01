@@ -10,7 +10,7 @@
 [ext_resource type="Script" uid="uid://dq6x4r5jjy4kp" path="res://scenes/health_bar.gd" id="5_iywne"]
 [ext_resource type="Script" uid="uid://dxllw3yl0v247" path="res://scenes/ex_ray.gd" id="6_gee14"]
 [ext_resource type="Texture2D" uid="uid://brl4h2mjrqxry" path="res://assets/images/mutant.png" id="6_u5sy4"]
-[ext_resource type="Script" path="res://scenes/mutant_exray_sprite.gd" id="8_vtaks"]
+[ext_resource type="Script" uid="uid://d0ssnqwi8dtlx" path="res://scenes/mutant_exray_sprite.gd" id="8_vtaks"]
 
 [node name="Game" type="Node2D" unique_id=1847825036]
 script = ExtResource("1_lbhrr")

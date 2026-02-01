@@ -34,7 +34,6 @@ func _ChangeAtmosphereToEnd():
 func _mutantHitSounds():
 	$MutantHit.play()
 	#$Shoot.play()
-	_changeAtmosphere()
 func _mutantSpawn():
 	$MutantDrop.play()
 	
@@ -42,9 +41,12 @@ func _sidechain():
 	is_falling = true
 	
 func _ready():
-	print(audio_stream_player_2d)
+	
+	#Change atmosphere when game starts
+	GameState.game_started.connect(_changeAtmosphere)
 	
 	GameState.end_game.connect(_ChangeAtmosphereToEnd)
+	
 	#Shoot Gun
 	if not mute:
 		GameState.gun_clicked.connect(_shootDebug)
@@ -61,6 +63,8 @@ func _ready():
 	#Play atmos at start of the game
 	if not mute:
 		_playAtmosphere()
+	
+	
 	
 	if not mute:
 		GameState.toggle_exray.connect($Xray.play)
